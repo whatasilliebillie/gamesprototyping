@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 
 public class WindowHandler : MonoBehaviour
 {
+    public static WindowHandler Instance;
+
     [SerializeField] private Transform playerCameraTrans;
     [SerializeField] private Camera windowCamera;
 
@@ -10,6 +12,17 @@ public class WindowHandler : MonoBehaviour
     [SerializeField] private Transform outWindowTrans;
 
     [SerializeField] private Material windowMaterial;
+
+    private void Awake()
+    {
+        if(Instance != null)
+        {
+            Debug.LogError("Multiple WindowHandler's are present in the scene!");
+            return;
+        }
+
+        Instance = this;
+    }
 
     private void Start()
     {
@@ -24,25 +37,27 @@ public class WindowHandler : MonoBehaviour
         SetPosition(inWindowTrans.position, inWindowTrans.forward);
     }
 
-    private void Update()
+    public void ProcessOpenWindowInput()
     {
-        if(Keyboard.current[Key.Enter].wasReleasedThisFrame)
-        {
-            Vector3 newPosition = playerCameraTrans.position;
-            newPosition += playerCameraTrans.forward.normalized * 0.05f;
+        Vector3 newPosition = playerCameraTrans.position;
+        newPosition += playerCameraTrans.forward.normalized * 0.05f;
 
-            SetPosition(newPosition, playerCameraTrans.forward);
-        }
+        SetPosition(newPosition, playerCameraTrans.forward);
     }
 
     private void SetPosition(Vector3 newPosition, Vector3 forward)
     {
-        Vector3 offset = outWindowTrans.position - inWindowTrans.position;
+        Vector3 offset = WindowOffset();
 
         inWindowTrans.position = newPosition;
         outWindowTrans.position = newPosition + offset;
 
         inWindowTrans.forward = forward;
         outWindowTrans.forward = forward;
+    }
+
+    public Vector3 WindowOffset()
+    {
+        return outWindowTrans.position - inWindowTrans.position;
     }
 }
