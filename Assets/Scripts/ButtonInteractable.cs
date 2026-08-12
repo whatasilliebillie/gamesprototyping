@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ButtonInteractable : MonoBehaviour, IInteractable
 {
@@ -7,6 +8,8 @@ public class ButtonInteractable : MonoBehaviour, IInteractable
 
     [SerializeField] private Material standardMaterial;
     [SerializeField] private Material highlightMaterial;
+
+    public UnityEvent ButtonPressEvent;
 
     public void Start()
     {
@@ -20,6 +23,8 @@ public class ButtonInteractable : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        ButtonPressEvent?.Invoke();
+
         animator.SetTrigger("Press");
     }
 }
