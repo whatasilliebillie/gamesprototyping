@@ -1,5 +1,7 @@
 using UnityEngine;
+using UnityEngine.Events;
 using System;
+using System.Collections;
 
 public class NumberLock : MonoBehaviour
 {
@@ -7,6 +9,10 @@ public class NumberLock : MonoBehaviour
     private Animator animator;
 
     [SerializeField] private int passcode;
+
+    [SerializeField] private float waitForUnlock = 0.75f;
+
+    public UnityEvent UnlockEvent;
 
     private void OnEnable()
     {
@@ -44,6 +50,17 @@ public class NumberLock : MonoBehaviour
 
             animator.SetBool("Locked", false);
         }
+
+        StartCoroutine(UnlockTriggerWait());
+    }
+
+    private IEnumerator UnlockTriggerWait()
+    {
+        yield return new WaitForSeconds(waitForUnlock);
+
+        UnlockEvent?.Invoke();
+
+        yield break;
     }
 
     private void OnDisable()
