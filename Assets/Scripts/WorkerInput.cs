@@ -131,6 +131,16 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""initialStateCheck"": false,
                     ""priority"": 0
+                },
+                {
+                    ""name"": ""ExitUI"",
+                    ""type"": ""Button"",
+                    ""id"": ""04d3a5f3-ffb0-474e-a0a3-892286e68ca9"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false,
+                    ""priority"": 0
                 }
             ],
             ""bindings"": [
@@ -221,6 +231,17 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
                     ""action"": ""OpenWindow"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""32fb55c8-9d50-4969-afd2-fe8736c85055"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ExitUI"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -233,6 +254,7 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
         m_OnFoot_Look = m_OnFoot.FindAction("Look", throwIfNotFound: true);
         m_OnFoot_Interact = m_OnFoot.FindAction("Interact", throwIfNotFound: true);
         m_OnFoot_OpenWindow = m_OnFoot.FindAction("OpenWindow", throwIfNotFound: true);
+        m_OnFoot_ExitUI = m_OnFoot.FindAction("ExitUI", throwIfNotFound: true);
     }
 
     ~@WorkerInput()
@@ -317,6 +339,7 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_OnFoot_Look;
     private readonly InputAction m_OnFoot_Interact;
     private readonly InputAction m_OnFoot_OpenWindow;
+    private readonly InputAction m_OnFoot_ExitUI;
     /// <summary>
     /// Provides access to input actions defined in input action map "OnFoot".
     /// </summary>
@@ -344,6 +367,10 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "OnFoot/OpenWindow".
         /// </summary>
         public InputAction @OpenWindow => m_Wrapper.m_OnFoot_OpenWindow;
+        /// <summary>
+        /// Provides access to the underlying input action "OnFoot/ExitUI".
+        /// </summary>
+        public InputAction @ExitUI => m_Wrapper.m_OnFoot_ExitUI;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -382,6 +409,9 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
             @OpenWindow.started += instance.OnOpenWindow;
             @OpenWindow.performed += instance.OnOpenWindow;
             @OpenWindow.canceled += instance.OnOpenWindow;
+            @ExitUI.started += instance.OnExitUI;
+            @ExitUI.performed += instance.OnExitUI;
+            @ExitUI.canceled += instance.OnExitUI;
         }
 
         /// <summary>
@@ -405,6 +435,9 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
             @OpenWindow.started -= instance.OnOpenWindow;
             @OpenWindow.performed -= instance.OnOpenWindow;
             @OpenWindow.canceled -= instance.OnOpenWindow;
+            @ExitUI.started -= instance.OnExitUI;
+            @ExitUI.performed -= instance.OnExitUI;
+            @ExitUI.canceled -= instance.OnExitUI;
         }
 
         /// <summary>
@@ -473,5 +506,12 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnOpenWindow(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ExitUI" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnExitUI(InputAction.CallbackContext context);
     }
 }

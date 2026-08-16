@@ -6,6 +6,7 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] private PlayerLook playerLook;
     private PlayerMovement playerMovement;
     private PlayerInteract playerInteract;
+    private PlayerUIHandler playerUIHandler;
 
     private WorkerInput inputActions;
 
@@ -15,6 +16,7 @@ public class PlayerInputHandler : MonoBehaviour
 
         playerMovement = GetComponent<PlayerMovement>();
         playerInteract = GetComponent<PlayerInteract>();
+        playerUIHandler = GetComponent<PlayerUIHandler>();
     }
 
     private void OnEnable()
@@ -22,6 +24,8 @@ public class PlayerInputHandler : MonoBehaviour
         inputActions.OnFoot.Enable();
 
         inputActions.OnFoot.Interact.performed += ctx => playerInteract.ProcessInteractInput();
+        inputActions.OnFoot.ExitUI.performed += ctx => playerUIHandler.CloseInspect();
+
         inputActions.OnFoot.OpenWindow.performed += ctx => WindowHandler.Instance.ProcessOpenWindowInput();
     }
 
@@ -33,9 +37,11 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void OnDisable()
     {
-        inputActions.OnFoot.Disable();
-
         inputActions.OnFoot.Interact.performed -= ctx => playerInteract.ProcessInteractInput();
+        inputActions.OnFoot.ExitUI.performed -= ctx => playerUIHandler.CloseInspect();
+
         inputActions.OnFoot.OpenWindow.performed -= ctx => WindowHandler.Instance.ProcessOpenWindowInput();
+
+        inputActions.OnFoot.Disable();
     }
 }

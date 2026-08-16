@@ -10,6 +10,8 @@ public class PlayerLook : MonoBehaviour
 
     private Vector2 lookInput;
 
+    private bool lookEnabled = true;
+
     public void ProcessLookInput(Vector2 newLookInput)
     {
         lookInput = newLookInput;
@@ -20,8 +22,15 @@ public class PlayerLook : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    public void ToggleLook(bool toggle)
+    {
+        lookEnabled = toggle;
+    }
+
     private void LateUpdate()
     {
+        if (!lookEnabled) return;
+
         float mouseX = lookInput.x * mouseSens * 0.01f;
         float mouseY = lookInput.y * mouseSens * 0.01f;
 
