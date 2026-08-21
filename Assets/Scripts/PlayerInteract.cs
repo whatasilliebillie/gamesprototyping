@@ -22,16 +22,22 @@ public class PlayerInteract : MonoBehaviour
 
     private void Update()
     {
-        if(Physics.Raycast(playerCameraTrans.position, playerCameraTrans.forward, out RaycastHit interactHit, interactionDistance, interactLayerMask))
+        if(Physics.Raycast(playerCameraTrans.position, playerCameraTrans.forward, out RaycastHit interactHit, interactionDistance))
         {
+            Debug.Log(interactHit.collider.gameObject.name);
+
+            if ((interactLayerMask & (1 << interactHit.collider.gameObject.layer)) == 0) return;
+
             GameObject hitObject = interactHit.transform.gameObject;
 
             if(hitObject.layer == windowLayer)
             {
                 Vector3 raycastPos = interactHit.point + WindowHandler.Instance.WindowOffset();
 
-                if (Physics.Raycast(raycastPos, playerCameraTrans.forward, out RaycastHit windowHit, interactionDistance - interactHit.distance, interactLayerMask))
+                if (Physics.Raycast(raycastPos, playerCameraTrans.forward, out RaycastHit windowHit, interactionDistance - interactHit.distance))
                 {
+                    if ((interactLayerMask & (1 << windowHit.collider.gameObject.layer)) == 0) return;
+
                     hitObject = windowHit.transform.gameObject;
                 }
                 else
