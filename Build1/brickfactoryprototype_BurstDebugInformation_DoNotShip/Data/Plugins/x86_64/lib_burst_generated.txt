@@ -1,4 +1,4 @@
-Library: C:\UnityGamesPriority\gamesprototyping\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+Library: C:\Users\Billie\UnityGames\gamesprototyping\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --platform=Windows
 --minimum-os-version=
 --backend=burst-llvm-21
@@ -10,10 +10,10 @@ Library: C:\UnityGamesPriority\gamesprototyping\Temp\BurstOutput\Data\Plugins\x8
 --target-framework=NetFramework
 --linker-options=PdbAltPath="brickfactoryprototype_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\UnityGamesPriority\gamesprototyping\Temp\Burst
+--temp-folder=C:\Users\Billie\UnityGames\gamesprototyping\Temp\Burst
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.5.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\UnityGamesPriority\gamesprototyping\Library\Burst
---output=C:\UnityGamesPriority\gamesprototyping\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\Billie\UnityGames\gamesprototyping\Library\Burst
+--output=C:\Users\Billie\UnityGames\gamesprototyping\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Jobs.IJobForExtensions+ForJobStruct`1[[UnityEngine.Rendering.Universal.TilingJob, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Rendering.Universal.TilingJob&, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--a6f5259e22ed809ef3937424c4bd686d
@@ -29,10 +29,10 @@ Library: C:\UnityGamesPriority\gamesprototyping\Temp\BurstOutput\Data\Plugins\x8
 --target-framework=NetFramework
 --linker-options=PdbAltPath="brickfactoryprototype_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\UnityGamesPriority\gamesprototyping\Temp\Burst
+--temp-folder=C:\Users\Billie\UnityGames\gamesprototyping\Temp\Burst
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.5.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\UnityGamesPriority\gamesprototyping\Library\Burst
---output=C:\UnityGamesPriority\gamesprototyping\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\Billie\UnityGames\gamesprototyping\Library\Burst
+--output=C:\Users\Billie\UnityGames\gamesprototyping\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Jobs.IJobForExtensions+ForJobStruct`1[[UnityEngine.Rendering.Universal.TilingJob, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Rendering.Universal.TilingJob&, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--a6f5259e22ed809ef3937424c4bd686d
@@ -50,10 +50,10 @@ Library: C:\UnityGamesPriority\gamesprototyping\Temp\BurstOutput\Data\Plugins\x8
 --float-mode=Fast
 --linker-options=PdbAltPath="brickfactoryprototype_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\UnityGamesPriority\gamesprototyping\Temp\Burst
+--temp-folder=C:\Users\Billie\UnityGames\gamesprototyping\Temp\Burst
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.5.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\UnityGamesPriority\gamesprototyping\Library\Burst
---output=C:\UnityGamesPriority\gamesprototyping\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\Billie\UnityGames\gamesprototyping\Library\Burst
+--output=C:\Users\Billie\UnityGames\gamesprototyping\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Jobs.IJobForExtensions+ForJobStruct`1[[UnityEngine.Rendering.Universal.ZBinningJob, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Rendering.Universal.ZBinningJob&, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--77fc393cb521ac129b1392d4eb94d29a
@@ -71,10 +71,10 @@ Library: C:\UnityGamesPriority\gamesprototyping\Temp\BurstOutput\Data\Plugins\x8
 --float-mode=Fast
 --linker-options=PdbAltPath="brickfactoryprototype_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\UnityGamesPriority\gamesprototyping\Temp\Burst
+--temp-folder=C:\Users\Billie\UnityGames\gamesprototyping\Temp\Burst
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.5.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\UnityGamesPriority\gamesprototyping\Library\Burst
---output=C:\UnityGamesPriority\gamesprototyping\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\Billie\UnityGames\gamesprototyping\Library\Burst
+--output=C:\Users\Billie\UnityGames\gamesprototyping\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Jobs.IJobForExtensions+ForJobStruct`1[[UnityEngine.Rendering.Universal.ZBinningJob, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Rendering.Universal.ZBinningJob&, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--77fc393cb521ac129b1392d4eb94d29a
@@ -90,10 +90,10 @@ Library: C:\UnityGamesPriority\gamesprototyping\Temp\BurstOutput\Data\Plugins\x8
 --target-framework=NetFramework
 --linker-options=PdbAltPath="brickfactoryprototype_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\UnityGamesPriority\gamesprototyping\Temp\Burst
+--temp-folder=C:\Users\Billie\UnityGames\gamesprototyping\Temp\Burst
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.5.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\UnityGamesPriority\gamesprototyping\Library\Burst
---output=C:\UnityGamesPriority\gamesprototyping\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\Billie\UnityGames\gamesprototyping\Library\Burst
+--output=C:\Users\Billie\UnityGames\gamesprototyping\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
@@ -207,10 +207,10 @@ Library: C:\UnityGamesPriority\gamesprototyping\Temp\BurstOutput\Data\Plugins\x8
 --target-framework=NetFramework
 --linker-options=PdbAltPath="brickfactoryprototype_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\UnityGamesPriority\gamesprototyping\Temp\Burst
+--temp-folder=C:\Users\Billie\UnityGames\gamesprototyping\Temp\Burst
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.5.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\UnityGamesPriority\gamesprototyping\Library\Burst
---output=C:\UnityGamesPriority\gamesprototyping\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\Billie\UnityGames\gamesprototyping\Library\Burst
+--output=C:\Users\Billie\UnityGames\gamesprototyping\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
