@@ -24,8 +24,6 @@ public class PlayerInteract : MonoBehaviour
     {
         if(Physics.Raycast(playerCameraTrans.position, playerCameraTrans.forward, out RaycastHit interactHit, interactionDistance))
         {
-            Debug.Log(interactHit.collider.gameObject.name);
-
             if ((interactLayerMask & (1 << interactHit.collider.gameObject.layer)) == 0) return;
 
             GameObject hitObject = interactHit.transform.gameObject;
