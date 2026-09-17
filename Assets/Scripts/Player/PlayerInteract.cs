@@ -24,7 +24,13 @@ public class PlayerInteract : MonoBehaviour
     {
         if(Physics.Raycast(playerCameraTrans.position, playerCameraTrans.forward, out RaycastHit interactHit, interactionDistance))
         {
-            if ((interactLayerMask & (1 << interactHit.collider.gameObject.layer)) == 0) return;
+            Debug.Log(interactHit.transform.gameObject);
+
+            if ((interactLayerMask & (1 << interactHit.collider.gameObject.layer)) == 0)
+            {
+                RemoveHoveredInteractable();
+                return;
+            }
 
             GameObject hitObject = interactHit.transform.gameObject;
 
@@ -34,18 +40,17 @@ public class PlayerInteract : MonoBehaviour
 
                 if (Physics.Raycast(raycastPos, playerCameraTrans.forward, out RaycastHit windowHit, interactionDistance - interactHit.distance))
                 {
-                    if ((interactLayerMask & (1 << windowHit.collider.gameObject.layer)) == 0) return;
+                    if ((interactLayerMask & (1 << windowHit.collider.gameObject.layer)) == 0)
+                    {
+                        RemoveHoveredInteractable();
+                        return;
+                    }
 
                     hitObject = windowHit.transform.gameObject;
                 }
                 else
                 {
-                    if (_hoveredInteractable != null)
-                    {
-                        _hoveredInteractable.SetHover(false);
-
-                        _hoveredInteractable = null;
-                    }
+                    RemoveHoveredInteractable();
 
                     return;
                 }
@@ -69,12 +74,17 @@ public class PlayerInteract : MonoBehaviour
         }
         else
         {
-            if(_hoveredInteractable != null)
-            {
-                _hoveredInteractable.SetHover(false);
+            RemoveHoveredInteractable();
+        }
+    }
 
-                _hoveredInteractable = null;
-            }
+    private void RemoveHoveredInteractable()
+    {
+        if (_hoveredInteractable != null)
+        {
+            _hoveredInteractable.SetHover(false);
+
+            _hoveredInteractable = null;
         }
     }
 }
