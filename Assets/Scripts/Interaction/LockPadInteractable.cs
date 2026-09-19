@@ -18,6 +18,8 @@ public class LockPadInteractable : MonoBehaviour, IInteractable
 
     public Action<int> OnInteract;
 
+    public HoverIcon hoverIcon => HoverIcon.Default;
+
     private void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();

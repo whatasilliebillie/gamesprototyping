@@ -11,6 +11,8 @@ public class ButtonInteractable : MonoBehaviour, IInteractable
 
     public UnityEvent ButtonPressEvent;
 
+    public HoverIcon hoverIcon => HoverIcon.Default;
+
     public void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();

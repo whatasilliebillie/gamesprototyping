@@ -9,6 +9,9 @@ public class BasicInteractable : MonoBehaviour, IInteractable
 
     public UnityEvent InteractEvent;
 
+    [SerializeField] private HoverIcon _hoverIcon;
+    public HoverIcon hoverIcon => _hoverIcon;
+
     public void SetHover(bool toggle)
     {
         

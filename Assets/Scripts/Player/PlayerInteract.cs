@@ -24,8 +24,6 @@ public class PlayerInteract : MonoBehaviour
     {
         if(Physics.Raycast(playerCameraTrans.position, playerCameraTrans.forward, out RaycastHit interactHit, interactionDistance))
         {
-            Debug.Log(interactHit.transform.gameObject);
-
             if ((interactLayerMask & (1 << interactHit.collider.gameObject.layer)) == 0)
             {
                 RemoveHoveredInteractable();
@@ -51,14 +49,13 @@ public class PlayerInteract : MonoBehaviour
                 else
                 {
                     RemoveHoveredInteractable();
-
                     return;
                 }
             }
 
             if(_hoveredInteractable != null)
             {
-                //stuff
+                RemoveHoveredInteractable();
             }
 
             if(hitObject.TryGetComponent(out IInteractable newInteractable))
@@ -66,6 +63,8 @@ public class PlayerInteract : MonoBehaviour
                 _hoveredInteractable = newInteractable;
 
                 _hoveredInteractable.SetHover(true);
+
+                InteractFeedbackUI.Instance.SetIcon(_hoveredInteractable.hoverIcon);
             }
             else
             {
@@ -82,6 +81,8 @@ public class PlayerInteract : MonoBehaviour
     {
         if (_hoveredInteractable != null)
         {
+            InteractFeedbackUI.Instance.SetIcon(HoverIcon.Default);
+
             _hoveredInteractable.SetHover(false);
 
             _hoveredInteractable = null;

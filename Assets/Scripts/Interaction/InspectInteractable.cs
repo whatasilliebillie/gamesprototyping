@@ -9,6 +9,8 @@ public class InspectInteractable : MonoBehaviour, IInteractable
 
     public Inspectable InspectPrefab => inspectPrefab;
 
+    public HoverIcon hoverIcon => HoverIcon.Eye;
+
     public void Interact()
     {
         PlayerUIHandler.Instance.StartInspect(this);

@@ -9,6 +9,18 @@ public class ItemUseInteractable : MonoBehaviour, IInteractable
 
     public UnityEvent ItemUseEvent;
 
+    public HoverIcon hoverIcon => GetHoverIcon();
+
+    private HoverIcon GetHoverIcon()
+    {
+        if(PlayerInventory.Instance.HasItem(usableItem))
+        {
+            return HoverIcon.Hand;
+        }
+
+        return HoverIcon.Default;
+    }
+
     public void SetHover(bool toggle)
     {
 

@@ -1,13 +1,18 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class InteractFeedbackUI : MonoBehaviour
 {
     public static InteractFeedbackUI Instance;
 
-    private Animator animator;
-
+    [Header("Feedback Text")]
+    [SerializeField] private Animator feedbackTextAnimator;
     [SerializeField] private TMP_Text feedbackText;
+
+    [Header("Hover Icons")]
+    [SerializeField] private Image iconImage;
+    [SerializeField] private Sprite[] hoverIconSprites;
 
     private void Awake()
     {
@@ -20,15 +25,15 @@ public class InteractFeedbackUI : MonoBehaviour
         Instance = this;
     }
 
-    private void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
-
     public void SetFeedback(string newFeedback)
     {
         feedbackText.text = newFeedback;
 
-        animator.Play("FeedbackDisplay", -1, 0f);
+        feedbackTextAnimator.Play("FeedbackDisplay", -1, 0f);
+    }
+
+    public void SetIcon(HoverIcon icon)
+    {
+        iconImage.sprite = hoverIconSprites[(int)icon];
     }
 }

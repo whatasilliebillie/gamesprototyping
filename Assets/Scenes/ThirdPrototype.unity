@@ -9676,6 +9676,7 @@ MonoBehaviour:
   InteractEvent:
     m_PersistentCalls:
       m_Calls: []
+  _hoverIcon: 0
 --- !u!1 &257872546
 GameObject:
   m_ObjectHideFlags: 0
@@ -12668,6 +12669,7 @@ GameObject:
   - component: {fileID: 470388061}
   - component: {fileID: 470388060}
   - component: {fileID: 470388059}
+  - component: {fileID: 470388062}
   m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
@@ -12760,6 +12762,25 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &470388062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470388057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9c3eea013bf9d8499834a574d609e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractFeedbackUI
+  feedbackTextAnimator: {fileID: 1909004322}
+  feedbackText: {fileID: 1901945230}
+  iconImage: {fileID: 1805468257}
+  hoverIconSprites:
+  - {fileID: 21300000, guid: d41a12daf15fa1644b43c8d8bdee1642, type: 3}
+  - {fileID: 21300000, guid: a6a3cf09a4c2b3b4a81bcd67ced0c4ae, type: 3}
+  - {fileID: 21300000, guid: aa05992560fabed4a8d512151b1e3b52, type: 3}
 --- !u!1 &473914090
 GameObject:
   m_ObjectHideFlags: 0
@@ -37126,6 +37147,7 @@ MonoBehaviour:
   ItemUseEvent:
     m_PersistentCalls:
       m_Calls: []
+  _hoverIcon: 2
 --- !u!1 &655521347
 GameObject:
   m_ObjectHideFlags: 0
@@ -58693,6 +58715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUpItemInteractable
   itemScriptable: {fileID: 11400000, guid: 296beff55b376a144b3630d38993a080, type: 2}
+  _hoverIcon: 2
 --- !u!136 &1099978039
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -65469,7 +65492,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 10}
+  m_SizeDelta: {x: 45, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1805468257
 MonoBehaviour:
@@ -65491,7 +65514,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: d41a12daf15fa1644b43c8d8bdee1642, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -66030,7 +66053,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1909004321}
   - component: {fileID: 1909004322}
-  - component: {fileID: 1909004323}
   m_Layer: 6
   m_Name: Panel_InteractFeedback
   m_TagString: Untagged
@@ -66080,19 +66102,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1909004323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1909004320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9c3eea013bf9d8499834a574d609e3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractFeedbackUI
-  feedbackText: {fileID: 1901945230}
 --- !u!1 &1922941945
 GameObject:
   m_ObjectHideFlags: 0
@@ -78130,6 +78139,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  _hoverIcon: 0
 --- !u!65 &2128693709
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -81397,6 +81407,7 @@ MonoBehaviour:
   InteractEvent:
     m_PersistentCalls:
       m_Calls: []
+  _hoverIcon: 0
 --- !u!1 &7956359156044048747
 GameObject:
   m_ObjectHideFlags: 0
