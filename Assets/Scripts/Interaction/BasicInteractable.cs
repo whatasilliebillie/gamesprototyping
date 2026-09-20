@@ -3,14 +3,25 @@ using UnityEngine.Events;
 
 public class BasicInteractable : MonoBehaviour, IInteractable
 {
-    [SerializeField] private Animator animator;
-
     [SerializeField] private string feedbackText;
+
+    [SerializeField] private bool singleUseInteract;
+    private bool interactEnabled = true;
 
     public UnityEvent InteractEvent;
 
     [SerializeField] private HoverIcon _hoverIcon;
-    public HoverIcon hoverIcon => _hoverIcon;
+    public HoverIcon hoverIcon => GetHoverIcon();
+
+    private HoverIcon GetHoverIcon()
+    {
+        if (!interactEnabled)
+        {
+            return HoverIcon.Default;
+        }
+
+        return _hoverIcon;
+    }
 
     public void SetHover(bool toggle)
     {
@@ -19,6 +30,8 @@ public class BasicInteractable : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        if (!interactEnabled) return;
+
         InteractEvent?.Invoke();
 
         if(feedbackText != "")
@@ -26,9 +39,14 @@ public class BasicInteractable : MonoBehaviour, IInteractable
             InteractFeedbackUI.Instance.SetFeedback(feedbackText);
         }
 
-        if(animator != null)
+        if(singleUseInteract)
         {
-            animator.SetTrigger("Interact");
+            interactEnabled = false;
         }
+    }
+
+    public void ToggleInteract(bool toggle)
+    {
+        interactEnabled = toggle;
     }
 }

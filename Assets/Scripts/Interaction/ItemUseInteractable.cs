@@ -7,6 +7,12 @@ public class ItemUseInteractable : MonoBehaviour, IInteractable
 
     [SerializeField] private GameObject useVisualObject;
 
+    [SerializeField] private bool takeItem;
+
+    [Header("Feedback")]
+    [SerializeField] private HoverIcon defaultHoverIcon;
+    [SerializeField] private string emptyInteractFeedbackText;
+
     public UnityEvent ItemUseEvent;
 
     public HoverIcon hoverIcon => GetHoverIcon();
@@ -18,7 +24,7 @@ public class ItemUseInteractable : MonoBehaviour, IInteractable
             return HoverIcon.Hand;
         }
 
-        return HoverIcon.Default;
+        return defaultHoverIcon;
     }
 
     public void SetHover(bool toggle)
@@ -30,11 +36,24 @@ public class ItemUseInteractable : MonoBehaviour, IInteractable
     {
         if(PlayerInventory.Instance.HasItem(usableItem))
         {
-            PlayerInventory.Instance.RemoveItem(usableItem);
+            if(takeItem)
+            {
+                PlayerInventory.Instance.RemoveItem(usableItem);
+            }
 
-            useVisualObject.SetActive(true);
+            if(useVisualObject != null)
+            {
+                useVisualObject.SetActive(true);
+            }
 
             ItemUseEvent?.Invoke();
+        }
+        else
+        {
+            if(emptyInteractFeedbackText != "")
+            {
+                InteractFeedbackUI.Instance.SetFeedback(emptyInteractFeedbackText);
+            }
         }
     }
 }

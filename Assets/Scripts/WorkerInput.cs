@@ -141,6 +141,16 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""initialStateCheck"": false,
                     ""priority"": 0
+                },
+                {
+                    ""name"": ""Sprint"",
+                    ""type"": ""Button"",
+                    ""id"": ""729743ca-1c8f-4dd9-ba2c-4b63d316f524"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false,
+                    ""priority"": 0
                 }
             ],
             ""bindings"": [
@@ -242,6 +252,17 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
                     ""action"": ""ExitUI"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5b39809d-a6f6-45db-bc1f-c366f600aa69"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -255,6 +276,7 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
         m_OnFoot_Interact = m_OnFoot.FindAction("Interact", throwIfNotFound: true);
         m_OnFoot_OpenWindow = m_OnFoot.FindAction("OpenWindow", throwIfNotFound: true);
         m_OnFoot_ExitUI = m_OnFoot.FindAction("ExitUI", throwIfNotFound: true);
+        m_OnFoot_Sprint = m_OnFoot.FindAction("Sprint", throwIfNotFound: true);
     }
 
     ~@WorkerInput()
@@ -340,6 +362,7 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_OnFoot_Interact;
     private readonly InputAction m_OnFoot_OpenWindow;
     private readonly InputAction m_OnFoot_ExitUI;
+    private readonly InputAction m_OnFoot_Sprint;
     /// <summary>
     /// Provides access to input actions defined in input action map "OnFoot".
     /// </summary>
@@ -371,6 +394,10 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "OnFoot/ExitUI".
         /// </summary>
         public InputAction @ExitUI => m_Wrapper.m_OnFoot_ExitUI;
+        /// <summary>
+        /// Provides access to the underlying input action "OnFoot/Sprint".
+        /// </summary>
+        public InputAction @Sprint => m_Wrapper.m_OnFoot_Sprint;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -412,6 +439,9 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
             @ExitUI.started += instance.OnExitUI;
             @ExitUI.performed += instance.OnExitUI;
             @ExitUI.canceled += instance.OnExitUI;
+            @Sprint.started += instance.OnSprint;
+            @Sprint.performed += instance.OnSprint;
+            @Sprint.canceled += instance.OnSprint;
         }
 
         /// <summary>
@@ -438,6 +468,9 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
             @ExitUI.started -= instance.OnExitUI;
             @ExitUI.performed -= instance.OnExitUI;
             @ExitUI.canceled -= instance.OnExitUI;
+            @Sprint.started -= instance.OnSprint;
+            @Sprint.performed -= instance.OnSprint;
+            @Sprint.canceled -= instance.OnSprint;
         }
 
         /// <summary>
@@ -513,5 +546,12 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnExitUI(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Sprint" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSprint(InputAction.CallbackContext context);
     }
 }

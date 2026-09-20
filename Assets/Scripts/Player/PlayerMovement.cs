@@ -5,13 +5,20 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody rb;
 
-    [SerializeField] private float moveSpeed;
+    [SerializeField] private float defaultMoveSpeed;
+    [SerializeField] private float sprintMoveSpeed;
 
-    private Vector2 moveInput;
+    private Vector2 _moveInput;
+    private bool _sprintInput;
 
     public void ProcessMoveInput(Vector2 newMoveInput)
     {
-        moveInput = newMoveInput;
+        _moveInput = newMoveInput;
+    }
+
+    public void ProcessSprintInput(bool newSprintInput)
+    {
+        _sprintInput = newSprintInput;
     }
 
     private void Start()
@@ -21,8 +28,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
-        move *= moveSpeed;
+        Vector3 move = transform.right * _moveInput.x + transform.forward * _moveInput.y;
+
+        if(_sprintInput)
+        {
+            move *= sprintMoveSpeed;
+        }
+        else
+        {
+            move *= defaultMoveSpeed;
+        }
 
         rb.linearVelocity = new Vector3(move.x, rb.linearVelocity.y, move.z);
     }
