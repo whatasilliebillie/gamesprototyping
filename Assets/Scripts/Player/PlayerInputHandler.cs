@@ -24,7 +24,11 @@ public class PlayerInputHandler : MonoBehaviour
         inputActions.OnFoot.Enable();
 
         inputActions.OnFoot.Interact.performed += ctx => playerInteract.ProcessInteractInput();
+
         inputActions.OnFoot.ExitUI.performed += ctx => playerUIHandler.CloseInspect();
+
+        inputActions.OnFoot.Sprint.started += ctx => playerMovement.ProcessSprintInput(true);
+        inputActions.OnFoot.Sprint.canceled += ctx => playerMovement.ProcessSprintInput(false);
 
         inputActions.OnFoot.OpenWindow.performed += ctx => WindowHandler.Instance.ProcessOpenWindowInput();
     }
@@ -32,13 +36,18 @@ public class PlayerInputHandler : MonoBehaviour
     private void Update()
     {
         playerMovement.ProcessMoveInput(inputActions.OnFoot.Movement.ReadValue<Vector2>());
+
         playerLook.ProcessLookInput(inputActions.OnFoot.Look.ReadValue<Vector2>());
     }
 
     private void OnDisable()
     {
         inputActions.OnFoot.Interact.performed -= ctx => playerInteract.ProcessInteractInput();
+
         inputActions.OnFoot.ExitUI.performed -= ctx => playerUIHandler.CloseInspect();
+
+        inputActions.OnFoot.Sprint.started += ctx => playerMovement.ProcessSprintInput(true);
+        inputActions.OnFoot.Sprint.canceled += ctx => playerMovement.ProcessSprintInput(false);
 
         inputActions.OnFoot.OpenWindow.performed -= ctx => WindowHandler.Instance.ProcessOpenWindowInput();
 

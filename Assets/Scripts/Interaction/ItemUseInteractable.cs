@@ -8,6 +8,7 @@ public class ItemUseInteractable : MonoBehaviour, IInteractable
     [SerializeField] private GameObject useVisualObject;
 
     [SerializeField] private bool takeItem;
+    private bool hasInteracted;
 
     [Header("Feedback")]
     [SerializeField] private HoverIcon defaultHoverIcon;
@@ -19,6 +20,11 @@ public class ItemUseInteractable : MonoBehaviour, IInteractable
 
     private HoverIcon GetHoverIcon()
     {
+        if(!takeItem && hasInteracted)
+        {
+            return HoverIcon.Default;
+        }
+
         if(PlayerInventory.Instance.HasItem(usableItem))
         {
             return HoverIcon.Hand;
@@ -47,6 +53,7 @@ public class ItemUseInteractable : MonoBehaviour, IInteractable
             }
 
             ItemUseEvent?.Invoke();
+            hasInteracted = true;
         }
         else
         {
