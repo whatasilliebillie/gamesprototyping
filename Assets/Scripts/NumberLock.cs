@@ -42,7 +42,7 @@ public class NumberLock : MonoBehaviour
         }
     }
 
-    private void Unlock()
+    public void Unlock()
     {
         foreach(LockPadInteractable keypad in keypads)
         {
