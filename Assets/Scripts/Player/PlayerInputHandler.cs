@@ -54,3 +54,6 @@ public class PlayerInputHandler : MonoBehaviour
         inputActions.OnFoot.Disable();
     }
 }
+
+
+

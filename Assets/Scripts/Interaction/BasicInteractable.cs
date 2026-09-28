@@ -11,6 +11,8 @@ public class BasicInteractable : MonoBehaviour, IInteractable
     public UnityEvent InteractEvent;
 
     [SerializeField] private HoverIcon _hoverIcon;
+
+    [SerializeField] private SoundSO interactSound;
     public HoverIcon hoverIcon => GetHoverIcon();
 
     private HoverIcon GetHoverIcon()
