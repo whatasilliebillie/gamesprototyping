@@ -140,20 +140,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Attention Gregory Meyer,
-
-
-    You have been cautioned time and time again
-    for your careless work- place behaviour and this is your final warning. I have
-    observed a clear and repetitive pattern of wreckless driving in company trucks
-    which has damaged our reputation and put bystanders at risk. In addition, your
-    disregard for workplace protocol in the loading bay has ultimately led to a workplace
-    injury when your truck was left parked in reverse without the handbrake activated.
-    You have been fired, empty your locker by Friday or its contents will be thrown
-    in the rubbish.
-
-
-    Signed Maxim Waters of the Malwick Brickworks '
+  m_text: "Attention Gregory Meyer,\n\nYou have been cautioned time and time again
+    for your careless work- place behaviour and my tolerance has run dry. Your disregard
+    for workplace protocol in the loading bay has ultimately led to a serious workplace
+    accident. \n\nA company employee was doing a routine inspection of the truck
+    when their toolbox slipped and fell onto the accelerator, and as you left the
+    truck parked in reverse without the handbrake activated, it came crashing into
+    the ramp behind. You have been fired, return your set of company keys by Friday
+    or your locker will be forcibly opened and its contents will be thrown in the
+    bin.\n\nSigned Maxim Waters of the Malwick Brickworks "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -180,8 +175,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 33
+  m_fontSizeBase: 33
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -219,7 +214,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -198.5531, y: -384.599, z: -207.76929, w: -411.4583}
+  m_margin: {x: -198.5531, y: -403.8562, z: -207.76929, w: -411.4583}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

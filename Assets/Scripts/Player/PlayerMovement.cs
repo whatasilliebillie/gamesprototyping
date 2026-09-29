@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private Transform cameraTrans;
     private Rigidbody rb;
 
     [SerializeField] private float defaultMoveSpeed;
@@ -28,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 move = transform.right * _moveInput.x + transform.forward * _moveInput.y;
+        Vector3 move = cameraTrans.right * _moveInput.x + cameraTrans.forward * _moveInput.y;
 
         if(_sprintInput)
         {

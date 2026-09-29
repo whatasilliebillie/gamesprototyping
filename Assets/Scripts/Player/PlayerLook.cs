@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
 {
-    [SerializeField] private Transform playerTrans;
+    [SerializeField] private Transform targetTrans;
 
     [SerializeField] private float mouseSens = 100f;
+    [SerializeField] private float targetLerpSpeed;
 
     private float xRotation = 0f;
+    private float yRotation = 0f;
 
     private Vector2 lookInput;
 
@@ -29,6 +31,8 @@ public class PlayerLook : MonoBehaviour
 
     private void LateUpdate()
     {
+        transform.position = Vector3.Lerp(transform.position, targetTrans.position, targetLerpSpeed * Time.deltaTime);
+
         if (!lookEnabled) return;
 
         float mouseX = lookInput.x * mouseSens * 0.01f;
@@ -37,7 +41,8 @@ public class PlayerLook : MonoBehaviour
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        playerTrans.Rotate(Vector3.up * mouseX);
+        yRotation += mouseX;
+
+        transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
     }
 }

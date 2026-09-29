@@ -4,7 +4,7 @@ public class BasicAnimObject : MonoBehaviour
 {
     private Animator animator;
 
-    [SerializeField] private AudioClip toggledAudioClip;
+    //[SerializeField] private AudioClip toggledAudioClip;
 
     private bool isToggled;
 
@@ -19,9 +19,11 @@ public class BasicAnimObject : MonoBehaviour
 
         animator.SetBool("Toggle", toggle);
 
+        /*
         if(toggledAudioClip != null)
         {
             SoundFXManager.Instance.PlaySoundFXClip(toggledAudioClip, transform, 1f);
         }
+        */
     }
 }

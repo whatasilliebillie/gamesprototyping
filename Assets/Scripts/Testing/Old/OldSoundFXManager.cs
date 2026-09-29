@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class SoundFXManager : MonoBehaviour
+public class OldSoundFXManager : MonoBehaviour
 {
-    public static SoundFXManager Instance;
+    public static OldSoundFXManager Instance;
 
     [SerializeField] private AudioSource soundFXPrefab;
 

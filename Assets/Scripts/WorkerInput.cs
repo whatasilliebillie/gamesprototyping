@@ -277,7 +277,7 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""5726ad9e-23e8-4c65-82f0-aa0cbe4f71a7"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/tab"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

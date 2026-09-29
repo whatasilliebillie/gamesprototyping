@@ -4,8 +4,17 @@ public class PlayerUIHandler : MonoBehaviour
 {
     public static PlayerUIHandler Instance;
 
+    [Header("Components")]
     [SerializeField] private PlayerLook playerLook;
+
+    [Header("Pause UI")]
+    [SerializeField] private PauseMenuUI pauseMenuManager;
+
+    [Header("Inspect UI")]
     [SerializeField] private Transform inspectUIParent;
+
+    public bool IsPaused => _isPaused;
+    private bool _isPaused;
 
     private Inspectable _inspectingUIObject;
     private bool _isInspecting;
@@ -29,9 +38,23 @@ public class PlayerUIHandler : MonoBehaviour
         }
     }
 
+    public void ProcessPauseInput()
+    {
+        TogglePause(!_isPaused);
+    }
+
+    public void TogglePause(bool toggle)
+    {
+        _isPaused = toggle;
+
+        pauseMenuManager.TogglePauseMenu(_isPaused);
+
+        ToggleCursor(_isPaused);
+    }
+
     public void StartInspect(InspectInteractable inspectInteractable)
     {
-        if (_isInspecting) return;
+        if (_isInspecting || _isPaused) return;
 
         Inspectable newInspectObject = Instantiate(inspectInteractable.InspectPrefab, inspectUIParent);
         _inspectingUIObject = newInspectObject;

@@ -25,6 +25,7 @@ public class PlayerInputHandler : MonoBehaviour
 
         inputActions.OnFoot.Interact.performed += ctx => playerInteract.ProcessInteractInput();
 
+        inputActions.OnFoot.SettingUI.performed += ctx => playerUIHandler.ProcessPauseInput();
         inputActions.OnFoot.ExitUI.performed += ctx => playerUIHandler.CloseInspect();
 
         inputActions.OnFoot.Sprint.started += ctx => playerMovement.ProcessSprintInput(true);
@@ -44,6 +45,7 @@ public class PlayerInputHandler : MonoBehaviour
     {
         inputActions.OnFoot.Interact.performed -= ctx => playerInteract.ProcessInteractInput();
 
+        inputActions.OnFoot.SettingUI.performed -= ctx => playerUIHandler.ProcessPauseInput();
         inputActions.OnFoot.ExitUI.performed -= ctx => playerUIHandler.CloseInspect();
 
         inputActions.OnFoot.Sprint.started += ctx => playerMovement.ProcessSprintInput(true);
