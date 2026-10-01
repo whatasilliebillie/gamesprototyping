@@ -47,7 +47,7 @@
                     "priority": 0
                 },
                 {
-                    "name": "ExitUI",
+                    "name": "Escape",
                     "type": "Button",
                     "id": "04d3a5f3-ffb0-474e-a0a3-892286e68ca9",
                     "expectedControlType": "",
@@ -60,16 +60,6 @@
                     "name": "Sprint",
                     "type": "Button",
                     "id": "729743ca-1c8f-4dd9-ba2c-4b63d316f524",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false,
-                    "priority": 0
-                },
-                {
-                    "name": "SettingUI",
-                    "type": "Button",
-                    "id": "a2d9051d-bdeb-4bc2-aaad-c3efd0e937cf",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -173,7 +163,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ExitUI",
+                    "action": "Escape",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -185,17 +175,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Sprint",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5726ad9e-23e8-4c65-82f0-aa0cbe4f71a7",
-                    "path": "<Keyboard>/tab",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SettingUI",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

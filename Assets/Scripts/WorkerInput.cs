@@ -133,7 +133,7 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
                     ""priority"": 0
                 },
                 {
-                    ""name"": ""ExitUI"",
+                    ""name"": ""Escape"",
                     ""type"": ""Button"",
                     ""id"": ""04d3a5f3-ffb0-474e-a0a3-892286e68ca9"",
                     ""expectedControlType"": """",
@@ -146,16 +146,6 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
                     ""name"": ""Sprint"",
                     ""type"": ""Button"",
                     ""id"": ""729743ca-1c8f-4dd9-ba2c-4b63d316f524"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false,
-                    ""priority"": 0
-                },
-                {
-                    ""name"": ""SettingUI"",
-                    ""type"": ""Button"",
-                    ""id"": ""a2d9051d-bdeb-4bc2-aaad-c3efd0e937cf"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -259,7 +249,7 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""ExitUI"",
+                    ""action"": ""Escape"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -271,17 +261,6 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Sprint"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""5726ad9e-23e8-4c65-82f0-aa0cbe4f71a7"",
-                    ""path"": ""<Keyboard>/tab"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SettingUI"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -296,9 +275,8 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
         m_OnFoot_Look = m_OnFoot.FindAction("Look", throwIfNotFound: true);
         m_OnFoot_Interact = m_OnFoot.FindAction("Interact", throwIfNotFound: true);
         m_OnFoot_OpenWindow = m_OnFoot.FindAction("OpenWindow", throwIfNotFound: true);
-        m_OnFoot_ExitUI = m_OnFoot.FindAction("ExitUI", throwIfNotFound: true);
+        m_OnFoot_Escape = m_OnFoot.FindAction("Escape", throwIfNotFound: true);
         m_OnFoot_Sprint = m_OnFoot.FindAction("Sprint", throwIfNotFound: true);
-        m_OnFoot_SettingUI = m_OnFoot.FindAction("SettingUI", throwIfNotFound: true);
     }
 
     ~@WorkerInput()
@@ -383,9 +361,8 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_OnFoot_Look;
     private readonly InputAction m_OnFoot_Interact;
     private readonly InputAction m_OnFoot_OpenWindow;
-    private readonly InputAction m_OnFoot_ExitUI;
+    private readonly InputAction m_OnFoot_Escape;
     private readonly InputAction m_OnFoot_Sprint;
-    private readonly InputAction m_OnFoot_SettingUI;
     /// <summary>
     /// Provides access to input actions defined in input action map "OnFoot".
     /// </summary>
@@ -414,17 +391,13 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @OpenWindow => m_Wrapper.m_OnFoot_OpenWindow;
         /// <summary>
-        /// Provides access to the underlying input action "OnFoot/ExitUI".
+        /// Provides access to the underlying input action "OnFoot/Escape".
         /// </summary>
-        public InputAction @ExitUI => m_Wrapper.m_OnFoot_ExitUI;
+        public InputAction @Escape => m_Wrapper.m_OnFoot_Escape;
         /// <summary>
         /// Provides access to the underlying input action "OnFoot/Sprint".
         /// </summary>
         public InputAction @Sprint => m_Wrapper.m_OnFoot_Sprint;
-        /// <summary>
-        /// Provides access to the underlying input action "OnFoot/SettingUI".
-        /// </summary>
-        public InputAction @SettingUI => m_Wrapper.m_OnFoot_SettingUI;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -463,15 +436,12 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
             @OpenWindow.started += instance.OnOpenWindow;
             @OpenWindow.performed += instance.OnOpenWindow;
             @OpenWindow.canceled += instance.OnOpenWindow;
-            @ExitUI.started += instance.OnExitUI;
-            @ExitUI.performed += instance.OnExitUI;
-            @ExitUI.canceled += instance.OnExitUI;
+            @Escape.started += instance.OnEscape;
+            @Escape.performed += instance.OnEscape;
+            @Escape.canceled += instance.OnEscape;
             @Sprint.started += instance.OnSprint;
             @Sprint.performed += instance.OnSprint;
             @Sprint.canceled += instance.OnSprint;
-            @SettingUI.started += instance.OnSettingUI;
-            @SettingUI.performed += instance.OnSettingUI;
-            @SettingUI.canceled += instance.OnSettingUI;
         }
 
         /// <summary>
@@ -495,15 +465,12 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
             @OpenWindow.started -= instance.OnOpenWindow;
             @OpenWindow.performed -= instance.OnOpenWindow;
             @OpenWindow.canceled -= instance.OnOpenWindow;
-            @ExitUI.started -= instance.OnExitUI;
-            @ExitUI.performed -= instance.OnExitUI;
-            @ExitUI.canceled -= instance.OnExitUI;
+            @Escape.started -= instance.OnEscape;
+            @Escape.performed -= instance.OnEscape;
+            @Escape.canceled -= instance.OnEscape;
             @Sprint.started -= instance.OnSprint;
             @Sprint.performed -= instance.OnSprint;
             @Sprint.canceled -= instance.OnSprint;
-            @SettingUI.started -= instance.OnSettingUI;
-            @SettingUI.performed -= instance.OnSettingUI;
-            @SettingUI.canceled -= instance.OnSettingUI;
         }
 
         /// <summary>
@@ -573,12 +540,12 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnOpenWindow(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "ExitUI" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Escape" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnExitUI(InputAction.CallbackContext context);
+        void OnEscape(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "Sprint" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
@@ -586,12 +553,5 @@ public partial class @WorkerInput: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSprint(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "SettingUI" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnSettingUI(InputAction.CallbackContext context);
     }
 }

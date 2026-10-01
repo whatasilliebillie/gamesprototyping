@@ -36,11 +36,10 @@ public class PlayerUIHandler : MonoBehaviour
         {
             CloseInspect();
         }
-    }
-
-    public void ProcessPauseInput()
-    {
-        TogglePause(!_isPaused);
+        else
+        {
+            TogglePause(!_isPaused);
+        }
     }
 
     public void TogglePause(bool toggle)
