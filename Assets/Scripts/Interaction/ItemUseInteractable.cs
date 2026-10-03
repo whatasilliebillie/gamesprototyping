@@ -16,7 +16,10 @@ public class ItemUseInteractable : MonoBehaviour, IInteractable
 
     public UnityEvent ItemUseEvent;
 
-    public HoverIcon hoverIcon => GetHoverIcon();
+    public HoverIcon CurHoverIcon => GetHoverIcon();
+
+    public bool InteractionEnabled => _interactionEnabled;
+    private bool _interactionEnabled = true;
 
     private HoverIcon GetHoverIcon()
     {
@@ -31,11 +34,6 @@ public class ItemUseInteractable : MonoBehaviour, IInteractable
         }
 
         return defaultHoverIcon;
-    }
-
-    public void SetHover(bool toggle)
-    {
-
     }
 
     public void Interact()

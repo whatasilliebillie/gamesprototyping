@@ -9,7 +9,10 @@ public class InspectInteractable : MonoBehaviour, IInteractable
 
     public Inspectable InspectPrefab => inspectPrefab;
 
-    public HoverIcon hoverIcon => HoverIcon.Eye;
+    public HoverIcon CurHoverIcon => HoverIcon.Eye;
+
+    public bool InteractionEnabled => _interactionEnabled;
+    private bool _interactionEnabled = true;
 
     public void Interact()
     {
@@ -24,10 +27,5 @@ public class InspectInteractable : MonoBehaviour, IInteractable
                 hasRevealed = true;
             }
         }
-    }
-
-    public void SetHover(bool toggle)
-    {
-
     }
 }

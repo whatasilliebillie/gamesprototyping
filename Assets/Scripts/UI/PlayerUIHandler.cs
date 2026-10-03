@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using System;
 
 public class PlayerUIHandler : MonoBehaviour
 {
@@ -6,6 +8,7 @@ public class PlayerUIHandler : MonoBehaviour
 
     [Header("Components")]
     [SerializeField] private PlayerLook playerLook;
+    private PlayerInteract playerInteract;
 
     [Header("Pause UI")]
     [SerializeField] private PauseMenuUI pauseMenuManager;
@@ -13,11 +16,21 @@ public class PlayerUIHandler : MonoBehaviour
     [Header("Inspect UI")]
     [SerializeField] private Transform inspectUIParent;
 
+    [Header("Other")]
+    [SerializeField] private Transform crosshairTrans;
+
     public bool IsPaused => _isPaused;
     private bool _isPaused;
 
+    public static event Action<bool> GamePauseEvent;
+
     private Inspectable _inspectingUIObject;
     private bool _isInspecting;
+
+    private FocusInteractable _focusingObject;
+    private bool _isFocused;
+
+    private bool _crosshairFollow;
 
     public void Awake()
     {
@@ -30,11 +43,30 @@ public class PlayerUIHandler : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        playerInteract = GetComponent<PlayerInteract>();
+
+        ToggleCursor(false);
+    }
+
+    private void Update()
+    {
+        if(_crosshairFollow)
+        {
+            crosshairTrans.position = Mouse.current.position.ReadValue();
+        }
+    }
+
     public void ProcessEscInput()
     {
         if(_isInspecting)
         {
             CloseInspect();
+        }
+        else if(_isFocused)
+        {
+            StopFocus();
         }
         else
         {
@@ -49,6 +81,8 @@ public class PlayerUIHandler : MonoBehaviour
         pauseMenuManager.TogglePauseMenu(_isPaused);
 
         ToggleCursor(_isPaused);
+
+        GamePauseEvent?.Invoke(_isPaused);
     }
 
     public void StartInspect(InspectInteractable inspectInteractable)
@@ -70,16 +104,63 @@ public class PlayerUIHandler : MonoBehaviour
             Destroy(_inspectingUIObject.gameObject);
         }
 
-        ToggleCursor(false);
+        if(!_isFocused)
+        {
+            ToggleCursor(false);
+        }
+        else
+        {
+            ToggleCursor(true, false);
+        }
 
         _isInspecting = false;
     }
 
-    private void ToggleCursor(bool visible)
+    public void StartFocus(FocusInteractable focusInteractable)
     {
-        Cursor.visible = visible;
-        Cursor.lockState = visible ? CursorLockMode.None : CursorLockMode.Locked;
+        if (_focusingObject != null || _isPaused) return;
 
-        playerLook.ToggleLook(!visible);
+        _focusingObject = focusInteractable;
+
+        _crosshairFollow = true;
+
+        playerInteract.SetInteractionMode(InteractionMode.Focus);
+        playerLook.SetCameraTarget(focusInteractable.CameraTarget);
+
+        ToggleCursor(true, false);
+
+        _isFocused = true;
+    }
+
+    public void StopFocus()
+    {
+        if(_focusingObject != null)
+        {
+            _focusingObject.StopFocus();
+            _focusingObject = null;
+        }
+
+        _crosshairFollow = false;
+        crosshairTrans.localPosition = Vector3.zero;
+
+        playerInteract.SetInteractionMode(InteractionMode.Default);
+        playerLook.RemoveCameraTarget();
+
+        ToggleCursor(false);
+
+        _isFocused = false;
+    }
+
+    private void ToggleCursor(bool cursorEnabled, bool cursorVisible)
+    {
+        Cursor.visible = cursorVisible;
+        Cursor.lockState = cursorEnabled ? CursorLockMode.None : CursorLockMode.Locked;
+
+        playerLook.ToggleLook(!cursorEnabled);
+    }
+
+    private void ToggleCursor(bool cursorEnabled)
+    {
+        ToggleCursor(cursorEnabled, cursorEnabled);
     }
 }

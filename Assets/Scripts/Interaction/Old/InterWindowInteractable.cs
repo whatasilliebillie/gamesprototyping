@@ -18,13 +18,17 @@ public class InterWindowInteractable : MonoBehaviour, IInteractable
     public UnityEvent InteractEvent;
 
     [SerializeField] private HoverIcon _hoverIcon;
-    public HoverIcon hoverIcon => _hoverIcon;
+    public HoverIcon CurHoverIcon => _hoverIcon;
+
+    public bool InteractionEnabled => _interactionEnabled;
+    private bool _interactionEnabled = true;
 
     public void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
     }
 
+    /*
     public void SetHover(bool toggle)
     {
         if(hideWhenNotHovered)
@@ -34,6 +38,7 @@ public class InterWindowInteractable : MonoBehaviour, IInteractable
 
         meshRenderer.material = toggle ? highlightMaterial : standardMaterial;
     }
+    */
 
     public void Interact()
     {

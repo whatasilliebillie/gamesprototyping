@@ -14,29 +14,32 @@ public class LockPadInteractable : MonoBehaviour, IInteractable
 
     private int _setNumber;
 
-    private bool _isInteractable = true;
+    public bool InteractionEnabled => _interactionEnabled;
+    private bool _interactionEnabled = true;
 
     public Action<int> OnInteract;
 
-    public HoverIcon hoverIcon => HoverIcon.Default;
+    public HoverIcon CurHoverIcon => HoverIcon.Default;
 
     private void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
     }
 
+    /*
     public void SetHover(bool toggle)
     {
-        if(_isInteractable)
+        if(_interactionEnabled)
         {
             meshRenderer.material = toggle ? highlightMaterial : standardMaterial;
             numberText.color = toggle ? Color.black : Color.white;
         }
     }
+    */
 
     public void Interact()
     {
-        if (!_isInteractable) return;
+        if (!_interactionEnabled) return;
 
         _setNumber++;
 
@@ -52,9 +55,9 @@ public class LockPadInteractable : MonoBehaviour, IInteractable
 
     public void ToggleInteraction(bool toggle)
     {
-        _isInteractable = toggle;
+        _interactionEnabled = toggle;
 
-        if(!_isInteractable)
+        if(!_interactionEnabled)
         {
             meshRenderer.material = standardMaterial;
             numberText.color = Color.white;

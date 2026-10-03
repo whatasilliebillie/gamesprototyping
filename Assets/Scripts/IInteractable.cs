@@ -2,9 +2,9 @@ using UnityEngine;
 
 public interface IInteractable
 {
-    HoverIcon hoverIcon { get; }
+    HoverIcon CurHoverIcon { get; }
+    bool InteractionEnabled { get; }
 
-    void SetHover(bool toggle);
     void Interact();
 }
 

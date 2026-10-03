@@ -11,7 +11,8 @@ public class ButtonInteractable : MonoBehaviour, IInteractable
 
     public UnityEvent ButtonPressEvent;
 
-    public HoverIcon hoverIcon => HoverIcon.Default;
+    public HoverIcon CurHoverIcon => HoverIcon.Default;
+    public bool InteractionEnabled => true;
 
     public void Start()
     {

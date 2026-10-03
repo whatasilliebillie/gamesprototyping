@@ -13,6 +13,11 @@ public class BasicAnimObject : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    public void TriggerAnim()
+    {
+        animator.SetTrigger("Toggle");
+    }
+
     public void ToggleAnim(bool toggle)
     {
         isToggled = toggle;

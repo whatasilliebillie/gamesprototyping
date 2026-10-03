@@ -6,18 +6,20 @@ public class BasicInteractable : MonoBehaviour, IInteractable
     [SerializeField] private string feedbackText;
 
     [SerializeField] private bool singleUseInteract;
-    private bool interactEnabled = true;
+
+    public bool InteractionEnabled => _interactionEnabled;
+    private bool _interactionEnabled = true;
 
     public UnityEvent InteractEvent;
 
     [SerializeField] private HoverIcon _hoverIcon;
 
     [SerializeField] private SoundSO interactSound;
-    public HoverIcon hoverIcon => GetHoverIcon();
+    public HoverIcon CurHoverIcon => GetHoverIcon();
 
     private HoverIcon GetHoverIcon()
     {
-        if (!interactEnabled)
+        if (!_interactionEnabled)
         {
             return HoverIcon.Default;
         }
@@ -25,14 +27,9 @@ public class BasicInteractable : MonoBehaviour, IInteractable
         return _hoverIcon;
     }
 
-    public void SetHover(bool toggle)
-    {
-        
-    }
-
     public void Interact()
     {
-        if (!interactEnabled) return;
+        if (!_interactionEnabled) return;
 
         InteractEvent?.Invoke();
 
@@ -43,12 +40,12 @@ public class BasicInteractable : MonoBehaviour, IInteractable
 
         if(singleUseInteract)
         {
-            interactEnabled = false;
+            _interactionEnabled = false;
         }
     }
 
     public void ToggleInteract(bool toggle)
     {
-        interactEnabled = toggle;
+        _interactionEnabled = toggle;
     }
 }
