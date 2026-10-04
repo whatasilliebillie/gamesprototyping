@@ -54,8 +54,6 @@ public class PlayerInteract : MonoBehaviour
     {
         if (Physics.Raycast(interactRay, out RaycastHit interactHit, interactDistance, raycastLayerMask))
         {
-            Debug.Log(interactHit.transform.gameObject.name);
-
             if ((interactLayerMask & (1 << interactHit.collider.gameObject.layer)) == 0)
             {
                 RemoveHoveredInteractable();

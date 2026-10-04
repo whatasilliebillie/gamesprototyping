@@ -33,6 +33,11 @@ public class FocusInteractable : MonoBehaviour, IInteractable
         focusCollider.enabled = true;
     }
 
+    public void ToggleInteraction(bool interactEnabled)
+    {
+        _interactionEnabled = interactEnabled;
+    }
+
     private void ToggleInternalColliders(bool colliderEnabled)
     {
         for(int i = 0; i < internalColliders.Length; i++)

@@ -134,6 +134,11 @@ public class PlayerUIHandler : MonoBehaviour
 
     public void StopFocus()
     {
+        if(_isInspecting)
+        {
+            CloseInspect();
+        }
+
         if(_focusingObject != null)
         {
             _focusingObject.StopFocus();

@@ -4742,6 +4742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42948219112406742a9f730c1ab5a7db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LeverPuzzleHandler
+  puzzleFocusInteractable: {fileID: 794340743}
   leverAnimators:
   - {fileID: 2132981697}
   - {fileID: 289545225}
@@ -7406,6 +7407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42948219112406742a9f730c1ab5a7db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LeverPuzzleHandler
+  puzzleFocusInteractable: {fileID: 0}
   leverAnimators: []
 --- !u!114 &1257871374
 MonoBehaviour:

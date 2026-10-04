@@ -363,7 +363,7 @@ MonoBehaviour:
     Standard
     position employees are entitled to two 15 minute unpaid breaks on a regular eight
     hour work day. Any employees caught overstaying their time on break will face
-    strong repercussions. The break room is equipped with fridge, sink and '
+    strong repercussions and will not be paid for their time spent  '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -575,22 +575,22 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'dining table to eat. The room should not be rearranged in any capacity
-    without permission. Food left in the fridge should be clearly named and eaten
-    on the day it was brought in.
+  m_text: 'overstaying. The break room should not be rearranged in any capacity without
+    permission. Food left in the fridge should be clearly named and eaten on the
+    day it was brought in.
 
 
     <size=40><u>Lockers</size></u>
 
 
-    Every
-    Malwick employee is entitled to a locker to store their belongings. There are
-    multiple locker rooms spread across the building, all of which are fitted with
-    a four number combination lock. Your individual locker code will correspond with
-    the calendar date of your first day at the company, using the day/month format.
-    For example, if you were hired on April 6th, your locker code would be issued
-    as 0604. Malwick Brickworks is not responsible for any valueables left in your
-    locker at any'
+    Every Malwick
+    employee is entitled to a locker to store their belongings. There are multiple
+    locker rooms spread across the building, all of which are fitted with a four
+    number combination lock. Your individual locker code will correspond with the
+    calendar date of your first day at the company, using the day/month format. For
+    example, if you were hired on April 6th, your locker code would be issued as
+    0604. Malwick Brickworks is not responsible for any valueables left in your locker
+    at any'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

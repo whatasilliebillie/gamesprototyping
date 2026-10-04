@@ -19,7 +19,12 @@ public class LockPadInteractable : MonoBehaviour, IInteractable
 
     public Action<int> OnInteract;
 
-    public HoverIcon CurHoverIcon => HoverIcon.Default;
+    public HoverIcon CurHoverIcon => GetHoverIcon();
+
+    private HoverIcon GetHoverIcon()
+    {
+        return _interactionEnabled ? HoverIcon.Circle : HoverIcon.Default;
+    }
 
     private void Start()
     {
