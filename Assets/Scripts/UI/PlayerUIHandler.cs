@@ -80,6 +80,8 @@ public class PlayerUIHandler : MonoBehaviour
 
         pauseMenuManager.TogglePauseMenu(_isPaused);
 
+        UpdateWindowEnabled();
+
         ToggleCursor(_isPaused);
 
         GamePauseEvent?.Invoke(_isPaused);
@@ -95,6 +97,8 @@ public class PlayerUIHandler : MonoBehaviour
         ToggleCursor(true);
 
         _isInspecting = true;
+
+        UpdateWindowEnabled();
     }
 
     public void CloseInspect()
@@ -114,6 +118,8 @@ public class PlayerUIHandler : MonoBehaviour
         }
 
         _isInspecting = false;
+
+        UpdateWindowEnabled();
     }
 
     public void StartFocus(FocusInteractable focusInteractable)
@@ -130,6 +136,20 @@ public class PlayerUIHandler : MonoBehaviour
         ToggleCursor(true, false);
 
         _isFocused = true;
+
+        UpdateWindowEnabled();
+    }
+
+    private void UpdateWindowEnabled()
+    {
+        if(_isPaused || _isFocused || _isInspecting)
+        {
+            WindowHandler.Instance.ToggleSpawnEnabled(false);
+        }
+        else
+        {
+            WindowHandler.Instance.ToggleSpawnEnabled(true);
+        }
     }
 
     public void StopFocus()
@@ -152,6 +172,8 @@ public class PlayerUIHandler : MonoBehaviour
         playerLook.RemoveCameraTarget();
 
         ToggleCursor(false);
+
+        WindowHandler.Instance.ToggleSpawnEnabled(true);
 
         _isFocused = false;
     }

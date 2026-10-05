@@ -13,6 +13,8 @@ public class WindowHandler : MonoBehaviour
 
     [SerializeField] private Material windowMaterial;
 
+    private bool _spawnEnabled = true;
+
     private void Awake()
     {
         if(Instance != null)
@@ -37,8 +39,15 @@ public class WindowHandler : MonoBehaviour
         SetPosition(inWindowTrans.position, inWindowTrans.forward);
     }
 
+    public void ToggleSpawnEnabled(bool isSpawnEnabled)
+    {
+        _spawnEnabled = isSpawnEnabled;
+    }
+
     public void ProcessOpenWindowInput()
     {
+        if (!_spawnEnabled) return;
+
         Vector3 newPosition = playerCameraTrans.position;
         newPosition += playerCameraTrans.forward.normalized * 0.05f;
 

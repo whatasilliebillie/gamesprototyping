@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
 {
+    public static PlayerLook Instance;
+
     [SerializeField] private Transform playerTargetTrans;
     private Transform _targetTrans;
 
@@ -9,6 +11,8 @@ public class PlayerLook : MonoBehaviour
 
     [SerializeField] private float playerTargetLerpSpeed;
     [SerializeField] private float targetLerpSpeed;
+
+    private Vector3 followOffset;
 
     [SerializeField] private float mouseSens = 100f;
 
@@ -24,6 +28,17 @@ public class PlayerLook : MonoBehaviour
         lookInput = newLookInput;
     }
 
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Debug.LogError("Multiple instances of PlayerLook in scene!");
+            return;
+        }
+
+        Instance = this;
+    }
+
     private void LateUpdate()
     {
         Transform lerpingTrans = playerTargetTrans;
@@ -37,7 +52,7 @@ public class PlayerLook : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, lerpingTrans.rotation, lerpSpeed * Time.deltaTime);
         }
 
-        transform.position = Vector3.Lerp(transform.position, lerpingTrans.position, lerpSpeed * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, lerpingTrans.position + followOffset, lerpSpeed * Time.deltaTime);
 
         if (!lookEnabled) return;
 
@@ -50,6 +65,11 @@ public class PlayerLook : MonoBehaviour
         yRotation += mouseX;
 
         transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
+    }
+
+    public void MoveCamera(Vector3 movement)
+    {
+        transform.position += movement;
     }
 
     public void SetCameraTarget(Transform newCameraTargetTrans)
