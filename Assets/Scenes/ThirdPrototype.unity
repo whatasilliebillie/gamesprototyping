@@ -83356,6 +83356,51 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1286126, y: 0.8464595, z: 2.0315027}
   m_Center: {x: -0.00000023841858, y: -0.08288264, z: -0.00000011920929}
+--- !u!1 &1794872409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1794872411}
+  - component: {fileID: 1794872410}
+  m_Layer: 0
+  m_Name: LevelMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1794872410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794872409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 518aaf2c88e6e124195dbabc74d6b4e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelMusicPlayer
+  music: {fileID: 11400000, guid: a3b9a1e001a854093981101709636e55, type: 2}
+--- !u!4 &1794872411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794872409}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.57368, y: 0, z: 6.25075}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1799153106
 GameObject:
   m_ObjectHideFlags: 0
@@ -104992,3 +105037,4 @@ SceneRoots:
   - {fileID: 330585546}
   - {fileID: 2133021450}
   - {fileID: 83947200}
+  - {fileID: 1794872411}
