@@ -4,6 +4,7 @@ using UnityEngine;
 public class ItemScriptable : ScriptableObject
 {
     public string DisplayName;
+    public Sprite Icon;
 
     public GameObject HeldItemPrefab;
 }
