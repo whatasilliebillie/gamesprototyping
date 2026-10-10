@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &263572250982619999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5676927679984265861}
+  m_Layer: 0
+  m_Name: CameraTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5676927679984265861
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263572250982619999}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.111, z: -1.793}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000001}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1888507794906097633}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1361021623363368114
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +140,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -225,9 +256,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1888507794906097633}
-  - component: {fileID: 1759167351045196797}
   - component: {fileID: 1412106782240616990}
-  m_Layer: 0
+  - component: {fileID: 8508767101038197418}
+  - component: {fileID: 2066918798005806197}
+  - component: {fileID: 1759167351045196797}
+  m_Layer: 8
   m_Name: PadLock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,30 +283,9 @@ Transform:
   - {fileID: 4087169703427604987}
   - {fileID: 6159930609805735120}
   - {fileID: 4833004503696352583}
+  - {fileID: 5676927679984265861}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -66.485, z: 0}
---- !u!114 &1759167351045196797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2588060521707460762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52f8880acf3d1548a2745bbca4ffdd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NumberLock
-  keypads:
-  - {fileID: 473350216571916476}
-  - {fileID: 4840318905827805742}
-  - {fileID: 7433857849756086335}
-  - {fileID: 8292460125934911457}
-  passcode: 1234
-  waitForUnlock: 0.75
-  UnlockEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!95 &1412106782240616990
 Animator:
   serializedVersion: 7
@@ -296,6 +308,70 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &8508767101038197418
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2588060521707460762}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.96127313, y: 1.6983056, z: 0.5652887}
+  m_Center: {x: 0.0016778107, y: 0.22402981, z: -0.022945106}
+--- !u!114 &2066918798005806197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2588060521707460762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec2bb5c5aa19e504b9b66180b88b9d65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FocusInteractable
+  CameraTarget: {fileID: 5676927679984265861}
+  focusCollider: {fileID: 8508767101038197418}
+  internalColliders:
+  - {fileID: 5510396310655130742}
+  - {fileID: 1344909023122418486}
+  - {fileID: 7502406598124481243}
+  - {fileID: 7370683133743860501}
+  cameraOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &1759167351045196797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2588060521707460762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52f8880acf3d1548a2745bbca4ffdd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NumberLock
+  focusInteractable: {fileID: 2066918798005806197}
+  keypads:
+  - {fileID: 473350216571916476}
+  - {fileID: 4840318905827805742}
+  - {fileID: 7433857849756086335}
+  - {fileID: 8292460125934911457}
+  passcode: 1234
+  waitForUnlock: 0.75
+  UnlockEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4354409167434368511
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,7 +755,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -709,7 +785,6 @@ GameObject:
   - component: {fileID: 6159930609805735120}
   - component: {fileID: 1658832843344437503}
   - component: {fileID: 1676239486728021218}
-  - component: {fileID: 2417805156734178348}
   m_Layer: 0
   m_Name: Base
   m_TagString: Untagged
@@ -789,27 +864,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2417805156734178348
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4917283166394503520}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5328701563482629048
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,7 +1110,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1447,7 +1501,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}

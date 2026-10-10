@@ -12,6 +12,8 @@ public class AudioSettingsUI : MonoBehaviour
     {
         if (SoundManager.Instance == null) return;
 
+        Debug.Log("banana");
+
         AudioSettingsData audioData = SoundManager.Instance.Settings;
 
         masterSlider.SetValueWithoutNotify(audioData.masterVolume);

@@ -5,8 +5,10 @@ using System.Collections;
 
 public class NumberLock : MonoBehaviour
 {
-    [SerializeField] private LockPadInteractable[] keypads;
+    private FocusInteractable focusInteractable;
     private Animator animator;
+
+    [SerializeField] private LockPadInteractable[] keypads;
 
     [SerializeField] private int passcode;
 
@@ -25,6 +27,7 @@ public class NumberLock : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        focusInteractable = GetComponent<FocusInteractable>();
     }
 
     private void OnKeyPadInteract(int number)
@@ -57,6 +60,9 @@ public class NumberLock : MonoBehaviour
     private IEnumerator UnlockTriggerWait()
     {
         yield return new WaitForSeconds(waitForUnlock);
+
+        focusInteractable.ToggleInteraction(false);
+        focusInteractable.StopFocus();
 
         UnlockEvent?.Invoke();
 

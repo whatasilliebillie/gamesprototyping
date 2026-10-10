@@ -161,7 +161,7 @@ public class PlayerUIHandler : MonoBehaviour
 
         if(_focusingObject != null)
         {
-            _focusingObject.StopFocus();
+            _focusingObject.OnStopFocus();
             _focusingObject = null;
         }
 

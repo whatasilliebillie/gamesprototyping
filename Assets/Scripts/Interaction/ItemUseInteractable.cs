@@ -14,12 +14,12 @@ public class ItemUseInteractable : MonoBehaviour, IInteractable
     [SerializeField] private HoverIcon defaultHoverIcon;
     [SerializeField] private string emptyInteractFeedbackText;
 
+    public bool InteractionEnabled => _interactionEnabled;
+    [SerializeField] private bool _interactionEnabled = true;
+
     public UnityEvent ItemUseEvent;
 
     public HoverIcon CurHoverIcon => GetHoverIcon();
-
-    public bool InteractionEnabled => _interactionEnabled;
-    private bool _interactionEnabled = true;
 
     private HoverIcon GetHoverIcon()
     {
@@ -38,6 +38,8 @@ public class ItemUseInteractable : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        if (!_interactionEnabled) return;
+
         if(PlayerInventory.Instance.HasItem(usableItem))
         {
             if(takeItem)
@@ -60,5 +62,10 @@ public class ItemUseInteractable : MonoBehaviour, IInteractable
                 InteractFeedbackUI.Instance.SetFeedback(emptyInteractFeedbackText);
             }
         }
+    }
+
+    public void ToggleInteraction(bool newEnabled)
+    {
+        _interactionEnabled = newEnabled;
     }
 }

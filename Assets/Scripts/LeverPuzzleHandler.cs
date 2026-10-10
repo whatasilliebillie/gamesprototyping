@@ -58,7 +58,7 @@ public class LeverPuzzleHandler : MonoBehaviour
         }
 
         puzzleFocusInteractable.ToggleInteraction(false);
-        PlayerUIHandler.Instance.StopFocus();
+        puzzleFocusInteractable.StopFocus();
 
         completeEventBridge.InvokeBridgingEvent();
 

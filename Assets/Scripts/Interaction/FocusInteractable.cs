@@ -38,6 +38,11 @@ public class FocusInteractable : MonoBehaviour, IInteractable
 
     public void StopFocus()
     {
+        PlayerUIHandler.Instance.StopFocus();
+    }
+
+    public void OnStopFocus()
+    {
         WindowHandler.Instance.ToggleSpawnEnabled(true);
 
         ToggleInternalColliders(false);
