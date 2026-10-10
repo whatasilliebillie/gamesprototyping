@@ -56,8 +56,11 @@ public class PlayerLook : MonoBehaviour
 
         if (!lookEnabled) return;
 
+        float mouseSens = SettingsManager.Instance.Settings.mouseSensitivity;
+
         float mouseX = lookInput.x * mouseSens * 0.01f;
         float mouseY = lookInput.y * mouseSens * 0.01f;
+
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);

@@ -1,13 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
-public class PauseMenuUI : MonoBehaviour
+public partial class PauseMenuUI : MonoBehaviour
 {
     [SerializeField] private PlayerUIHandler playerUIHandler;
 
     [SerializeField] private GameObject pauseMenuPanel;
     [SerializeField] private GameObject audioSettingsPanel;
+    [SerializeField] private GameObject gameSettingsPanel;
 
     public void TogglePauseMenu(bool toggle)
     {
@@ -17,6 +17,12 @@ public class PauseMenuUI : MonoBehaviour
         {
             audioSettingsPanel.SetActive(false);
         }
+
+        if (!toggle)
+        {
+            gameSettingsPanel.SetActive(false);
+        }
+    
     }
 
     public void ExitPauseMenu()
@@ -35,4 +41,19 @@ public class PauseMenuUI : MonoBehaviour
         audioSettingsPanel.SetActive(false);
         pauseMenuPanel.SetActive(true);
     }
+
+    public void OpenGameSettings()
+    {
+        gameSettingsPanel.SetActive(true);
+        pauseMenuPanel.SetActive(false);
+    }
+
+    public void ExitGameSettings()
+    {
+        gameSettingsPanel.SetActive(false);
+        pauseMenuPanel.SetActive(true);
+    }
+
+
+
 }

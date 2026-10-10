@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -101,6 +102,41 @@ public class SoundManager : MonoBehaviour
             Destroy(go, clip.length / Mathf.Abs(source.pitch));
         }
 
+    }
+    // 2D sound for menus and UI: no position, always non-spatial
+    public void PlayUISound(SoundSO soundSO)
+    {
+        if (soundSO == null || soundSO.Clip == null)
+        {
+            return;
+        }
+
+        var go = new GameObject(soundSO.name);
+        go.transform.SetParent(transform);
+        var source = go.AddComponent<AudioSource>();
+
+        source.clip = soundSO.Clip;
+        source.outputAudioMixerGroup = soundSO.MixerGroup;
+        source.volume = soundSO.Volume;
+        source.pitch = soundSO.pitch;
+        source.spatialBlend = 0f;
+        source.loop = false;
+        source.ignoreListenerPause = true;
+
+        source.Play();
+
+       
+        StartCoroutine(DestroyAfterRealtime(go, soundSO.Clip.length / Mathf.Abs(source.pitch)));
+    }
+
+    private IEnumerator DestroyAfterRealtime(GameObject go, float seconds)
+    {
+        yield return new WaitForSecondsRealtime(seconds);
+
+        if (go != null)
+        {
+            Destroy(go);
+        }
     }
 
     public void Stop(AudioSource source)
