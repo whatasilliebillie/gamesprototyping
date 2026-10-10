@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoundSO
   Clip: {fileID: 8300000, guid: 7a1766a6467024689bce20eef85e1265, type: 3}
   MixerGroup: {fileID: -607253757339559116, guid: 8aa981a01df7edb4e927f592561181c6, type: 2}
-  Volume: 1
+  Volume: 0.5
   pitch: 1
   SpatialBlend: 0
   MaxDistance: 25

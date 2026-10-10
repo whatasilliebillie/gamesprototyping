@@ -5,7 +5,6 @@ public class SettingsManager : MonoBehaviour
 {
     private static SettingsManager _instance;
 
-    // Creates itself if no one placed it in the scene, so it works without any setup
     public static SettingsManager Instance
     {
         get
@@ -43,6 +42,8 @@ public class SettingsManager : MonoBehaviour
     {
         Settings.mouseSensitivity = Mathf.Clamp(value,
             GameSettingsData.MinMouseSensitivity, GameSettingsData.MaxMouseSensitivity);
+
+        SaveSettings();
         OnSettingsChanged?.Invoke();
     }
 
@@ -50,6 +51,8 @@ public class SettingsManager : MonoBehaviour
     {
         Settings.windowMode = Mathf.Clamp(mode, 0, 2);
         ApplyDisplay();
+
+        SaveSettings();
         OnSettingsChanged?.Invoke();
     }
 
@@ -65,15 +68,25 @@ public class SettingsManager : MonoBehaviour
 
     public void SaveSettings()
     {
-        PlayerPrefs.SetString(SettingsKey, JsonUtility.ToJson(Settings));
+        string json = JsonUtility.ToJson(Settings);
+        PlayerPrefs.SetString(SettingsKey, json);
         PlayerPrefs.Save();
+
+        Debug.Log("[SettingsManager] Saved: " + json);
     }
 
     public void LoadSettings()
     {
-        if (!PlayerPrefs.HasKey(SettingsKey)) return;
+        if (!PlayerPrefs.HasKey(SettingsKey))
+        {
+            Debug.Log("[SettingsManager] No saved settings found, using defaults");
+            return;
+        }
 
-        var loaded = JsonUtility.FromJson<GameSettingsData>(PlayerPrefs.GetString(SettingsKey));
+        string json = PlayerPrefs.GetString(SettingsKey);
+        var loaded = JsonUtility.FromJson<GameSettingsData>(json);
         if (loaded != null) Settings = loaded;
+
+        Debug.Log("[SettingsManager] Loaded: " + json);
     }
 }

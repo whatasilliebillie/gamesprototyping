@@ -8,7 +8,7 @@ public class AudioSettingsUI : MonoBehaviour
     [SerializeField] private Slider sfxSlider;
     [SerializeField] private Toggle muteAudioToggle;
 
-    private void OnEnable()
+    private void Start()
     {
         if (SoundManager.Instance == null) return;
 
@@ -20,14 +20,6 @@ public class AudioSettingsUI : MonoBehaviour
         musicSlider.SetValueWithoutNotify(audioData.musicVolume);
         sfxSlider.SetValueWithoutNotify(audioData.sfxVolume);
         muteAudioToggle.SetIsOnWithoutNotify(audioData.muted);
-    }
-
-    private void OnDisable()
-    {
-        if (SoundManager.Instance != null)
-        {
-            SoundManager.Instance.SaveSettings();
-        }
     }
 
     public void SetMasterVolume()
