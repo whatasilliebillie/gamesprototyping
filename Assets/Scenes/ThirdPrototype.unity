@@ -7995,7 +7995,6 @@ GameObject:
   - component: {fileID: 232209757}
   - component: {fileID: 232209756}
   - component: {fileID: 232209755}
-  - component: {fileID: 232209754}
   - component: {fileID: 232209753}
   m_Layer: 0
   m_Name: RollerDoor
@@ -8031,28 +8030,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a019d72b3a9ba9c4988507750ba279a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasicAnimObject
---- !u!95 &232209754
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 232209751}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 86f7daaa0caa644438cf453fbdd605be, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!65 &232209755
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25995,7 +25972,6 @@ GameObject:
   - component: {fileID: 789272941}
   - component: {fileID: 789272940}
   - component: {fileID: 789272939}
-  - component: {fileID: 789272938}
   - component: {fileID: 789272937}
   m_Layer: 0
   m_Name: RollerDoor
@@ -26031,28 +26007,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a019d72b3a9ba9c4988507750ba279a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasicAnimObject
---- !u!95 &789272938
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789272935}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 86f7daaa0caa644438cf453fbdd605be, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!65 &789272939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34306,7 +34260,7 @@ Transform:
   m_GameObject: {fileID: 1261203273}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.47455, y: 4.0000005, z: 5.09358}
+  m_LocalPosition: {x: -6.47455, y: 4.0000005, z: 4.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -35528,7 +35482,7 @@ PrefabInstance:
       objectReference: {fileID: 566719398}
     - target: {fileID: 3659356186476005041, guid: ac64ea82df5efc64a83512bc99aa1855, type: 3}
       propertyPath: m_VersionIndex
-      value: 27134
+      value: 27137
       objectReference: {fileID: 0}
     - target: {fileID: 4043448632551469414, guid: ac64ea82df5efc64a83512bc99aa1855, type: 3}
       propertyPath: m_Mesh
@@ -60160,7 +60114,7 @@ PrefabInstance:
       objectReference: {fileID: 719229300}
     - target: {fileID: 3659356186476005041, guid: ac64ea82df5efc64a83512bc99aa1855, type: 3}
       propertyPath: m_VersionIndex
-      value: 27170
+      value: 27173
       objectReference: {fileID: 0}
     - target: {fileID: 3659356186476005041, guid: ac64ea82df5efc64a83512bc99aa1855, type: 3}
       propertyPath: m_SelectedEdges.Array.size
