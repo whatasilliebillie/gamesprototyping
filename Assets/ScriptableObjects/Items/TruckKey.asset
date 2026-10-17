@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: TruckKey
   m_EditorClassIdentifier: Assembly-CSharp::ItemScriptable
   DisplayName: Vehicle Key
+  Icon: {fileID: 21300000, guid: 9bfa562cf3423d049aa37d84f423c1ae, type: 3}
   HeldItemPrefab: {fileID: 0}

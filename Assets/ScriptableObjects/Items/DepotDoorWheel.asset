@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: DepotDoorWheel
   m_EditorClassIdentifier: Assembly-CSharp::ItemScriptable
   DisplayName: Handwheel
+  Icon: {fileID: 21300000, guid: 983010dd688c66f458c98c154887e522, type: 3}
   HeldItemPrefab: {fileID: 0}

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: FireExtinguisher
   m_EditorClassIdentifier: Assembly-CSharp::ItemScriptable
   DisplayName: Fire Extinguisher
+  Icon: {fileID: 21300000, guid: 88169c68848588b49846ce5fe6cb624e, type: 3}
   HeldItemPrefab: {fileID: 0}
