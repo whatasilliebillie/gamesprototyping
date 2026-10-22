@@ -1,6 +1,6 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System;
 
 public class PlayerUIHandler : MonoBehaviour
 {
@@ -191,3 +191,6 @@ public class PlayerUIHandler : MonoBehaviour
         ToggleCursor(cursorEnabled, cursorEnabled);
     }
 }
+
+
+
