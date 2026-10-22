@@ -21,8 +21,8 @@ public class WindowHandler : MonoBehaviour
     private Collider _inCollider;
 
     private bool _windowVisible;
+    private bool _timerPaused;
     private float _timeRemaining;
-    private int _holdCount;
 
     private void Awake()
     {
@@ -53,7 +53,7 @@ public class WindowHandler : MonoBehaviour
 
     private void Update()
     {
-        if (!_windowVisible || _holdCount > 0) return;
+        if (!_windowVisible || _timerPaused) return;
 
         _timeRemaining -= Time.deltaTime;
 
@@ -68,16 +68,10 @@ public class WindowHandler : MonoBehaviour
         _spawnEnabled = isSpawnEnabled;
     }
 
-    // Call when something (focus, inspect) should stop the window fading
-    public void HoldWindow()
+    // Pauses the fade timer (used while paused, focused or inspecting)
+    public void SetTimerPaused(bool paused)
     {
-        _holdCount++;
-    }
-
-    // Call when that thing ends
-    public void ReleaseWindow()
-    {
-        _holdCount = Mathf.Max(0, _holdCount - 1);
+        _timerPaused = paused;
     }
 
     public void ProcessOpenWindowInput()

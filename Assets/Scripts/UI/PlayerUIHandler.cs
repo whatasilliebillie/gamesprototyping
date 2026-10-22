@@ -34,7 +34,7 @@ public class PlayerUIHandler : MonoBehaviour
 
     public void Awake()
     {
-        if(Instance != null)
+        if (Instance != null)
         {
             Debug.LogError("Multiple instances of PlayerUIHandler in scene!");
             return;
@@ -52,7 +52,7 @@ public class PlayerUIHandler : MonoBehaviour
 
     private void Update()
     {
-        if(_crosshairFollow)
+        if (_crosshairFollow)
         {
             crosshairTrans.position = Mouse.current.position.ReadValue();
         }
@@ -60,11 +60,11 @@ public class PlayerUIHandler : MonoBehaviour
 
     public void ProcessEscInput()
     {
-        if(_isInspecting)
+        if (_isInspecting)
         {
             CloseInspect();
         }
-        else if(_isFocused)
+        else if (_isFocused)
         {
             StopFocus();
         }
@@ -103,12 +103,12 @@ public class PlayerUIHandler : MonoBehaviour
 
     public void CloseInspect()
     {
-        if(_inspectingUIObject != null)
+        if (_inspectingUIObject != null)
         {
             Destroy(_inspectingUIObject.gameObject);
         }
 
-        if(!_isFocused)
+        if (!_isFocused)
         {
             ToggleCursor(false);
         }
@@ -142,24 +142,20 @@ public class PlayerUIHandler : MonoBehaviour
 
     private void UpdateWindowEnabled()
     {
-        if(_isPaused || _isFocused || _isInspecting)
-        {
-            WindowHandler.Instance.ToggleSpawnEnabled(false);
-        }
-        else
-        {
-            WindowHandler.Instance.ToggleSpawnEnabled(true);
-        }
+        bool uiActive = _isPaused || _isFocused || _isInspecting;
+
+        WindowHandler.Instance.ToggleSpawnEnabled(!uiActive);
+        WindowHandler.Instance.SetTimerPaused(uiActive);
     }
 
     public void StopFocus()
     {
-        if(_isInspecting)
+        if (_isInspecting)
         {
             CloseInspect();
         }
 
-        if(_focusingObject != null)
+        if (_focusingObject != null)
         {
             _focusingObject.OnStopFocus();
             _focusingObject = null;
@@ -173,9 +169,9 @@ public class PlayerUIHandler : MonoBehaviour
 
         ToggleCursor(false);
 
-        WindowHandler.Instance.ToggleSpawnEnabled(true);
-
         _isFocused = false;
+
+        UpdateWindowEnabled();
     }
 
     private void ToggleCursor(bool cursorEnabled, bool cursorVisible)
