@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180e488ae3937044d884ba6d6b2486f7, type: 3}
   m_Name: SD_UISlide
   m_EditorClassIdentifier: Assembly-CSharp::SoundSO
-  Clip: {fileID: 8300000, guid: 9d54f919df3e2cb419cf878a62846526, type: 3}
+  Clip: {fileID: 8300000, guid: 18df5bf5d5376884781874931321244b, type: 3}
   MixerGroup: {fileID: 4507937391878009864, guid: 8aa981a01df7edb4e927f592561181c6, type: 2}
-  Volume: 0.5
+  Volume: 0.269
   pitch: 1
   SpatialBlend: 1
   MaxDistance: 25
