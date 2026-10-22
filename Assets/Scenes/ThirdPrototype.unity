@@ -26396,6 +26396,7 @@ MonoBehaviour:
   inWindowTrans: {fileID: 689643604}
   outWindowTrans: {fileID: 1134769841}
   windowMaterial: {fileID: 2100000, guid: 2310f7592fdd4774b81aebd7840b90b6, type: 2}
+  windowLifetime: 5
 --- !u!4 &748491333
 Transform:
   m_ObjectHideFlags: 0

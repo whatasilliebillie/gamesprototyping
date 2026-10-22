@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,22 +14,32 @@ public class WindowHandler : MonoBehaviour
 
     [SerializeField] private Material windowMaterial;
 
+    //Sets the time the window is active
+    [SerializeField] private float windowLifetime = 5f;
+
     private bool _spawnEnabled = true;
+
+    private Renderer _inRenderer;
+    private Collider _inCollider;
+    private Coroutine _hideRoutine;
 
     private void Awake()
     {
-        if(Instance != null)
+        if (Instance != null)
         {
             Debug.LogError("Multiple WindowHandler's are present in the scene!");
             return;
         }
 
         Instance = this;
+
+        _inRenderer = inWindowTrans.GetComponent<Renderer>();
+        _inCollider = inWindowTrans.GetComponent<Collider>();
     }
 
     private void Start()
     {
-        if(windowCamera.targetTexture != null)
+        if (windowCamera.targetTexture != null)
         {
             windowCamera.targetTexture.Release();
         }
@@ -52,6 +63,25 @@ public class WindowHandler : MonoBehaviour
         newPosition += playerCameraTrans.forward.normalized * 0.05f;
 
         SetPosition(newPosition, playerCameraTrans.forward);
+
+        SetWindowActive(true);
+
+        if (_hideRoutine != null) StopCoroutine(_hideRoutine);
+        _hideRoutine = StartCoroutine(HideAfterDelay());
+    }
+
+    private IEnumerator HideAfterDelay()
+    {
+        yield return new WaitForSeconds(windowLifetime);
+
+        SetWindowActive(false);
+        _hideRoutine = null;
+    }
+
+    private void SetWindowActive(bool isActive)
+    {
+        if (_inRenderer != null) _inRenderer.enabled = isActive;
+        if (_inCollider != null) _inCollider.enabled = isActive;
     }
 
     private void SetPosition(Vector3 newPosition, Vector3 forward)
