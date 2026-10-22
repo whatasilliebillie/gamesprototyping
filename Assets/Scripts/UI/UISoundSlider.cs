@@ -54,3 +54,4 @@ public class UISoundSlider : MonoBehaviour, IPointerEnterHandler, IPointerDownHa
         loopSource.Stop();
     }
 }
+
