@@ -28279,7 +28279,6 @@ MonoBehaviour:
   inWindowTrans: {fileID: 689643604}
   outWindowTrans: {fileID: 1134769841}
   windowMaterial: {fileID: 2100000, guid: 2310f7592fdd4774b81aebd7840b90b6, type: 2}
-  windowLifetime: 5
 --- !u!4 &748491333
 Transform:
   m_ObjectHideFlags: 0
@@ -44857,6 +44856,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4090522131850214565, guid: 8ccb5ee2ec102464a997a0d6d2701971, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1462031015}
+    - target: {fileID: 4090522131850214565, guid: 8ccb5ee2ec102464a997a0d6d2701971, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenGameSettings
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090522131850214565, guid: 8ccb5ee2ec102464a997a0d6d2701971, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenuUI, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4139860497227323566, guid: 8ccb5ee2ec102464a997a0d6d2701971, type: 3}
       propertyPath: m_Name
       value: SettingsGameObject_Final
@@ -44896,6 +44907,18 @@ PrefabInstance:
     - target: {fileID: 5530236500658650272, guid: 8ccb5ee2ec102464a997a0d6d2701971, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -69.11205
+      objectReference: {fileID: 0}
+    - target: {fileID: 5608718680558167602, guid: 8ccb5ee2ec102464a997a0d6d2701971, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1462031015}
+    - target: {fileID: 5608718680558167602, guid: 8ccb5ee2ec102464a997a0d6d2701971, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenHowToPlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 5608718680558167602, guid: 8ccb5ee2ec102464a997a0d6d2701971, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenuUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5654842452691174750, guid: 8ccb5ee2ec102464a997a0d6d2701971, type: 3}
       propertyPath: m_Pivot.x
@@ -45041,6 +45064,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7258625433156602433, guid: 8ccb5ee2ec102464a997a0d6d2701971, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1462031015}
+    - target: {fileID: 7258625433156602433, guid: 8ccb5ee2ec102464a997a0d6d2701971, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenAudioSettings
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258625433156602433, guid: 8ccb5ee2ec102464a997a0d6d2701971, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenuUI, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7405492454876976393, guid: 8ccb5ee2ec102464a997a0d6d2701971, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -45147,6 +45182,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5654842452691174750, guid: 8ccb5ee2ec102464a997a0d6d2701971, type: 3}
   m_PrefabInstance: {fileID: 1462031013}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1462031015 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2434867388749128450, guid: 8ccb5ee2ec102464a997a0d6d2701971, type: 3}
+  m_PrefabInstance: {fileID: 1462031013}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28d91eaced68f7848801a8f5edf456de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseMenuUI
 --- !u!1 &1464572387
 GameObject:
   m_ObjectHideFlags: 0
@@ -56950,7 +56996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerUIHandler
   playerLook: {fileID: 1184461626}
-  pauseMenuManager: {fileID: 0}
+  pauseMenuManager: {fileID: 1462031015}
   inspectUIParent: {fileID: 752124135}
   crosshairTrans: {fileID: 1590774257}
 --- !u!114 &1905794015
