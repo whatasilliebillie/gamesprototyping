@@ -26,6 +26,8 @@ public class FocusInteractable : MonoBehaviour, IInteractable
     {
         PlayerUIHandler.Instance.StartFocus(this);
 
+        WindowHandler.Instance.HoldWindow();   
+
         ToggleInternalColliders(true);
 
         if(cameraOffset != Vector3.zero)
@@ -44,6 +46,9 @@ public class FocusInteractable : MonoBehaviour, IInteractable
     public void OnStopFocus()
     {
         WindowHandler.Instance.ToggleSpawnEnabled(true);
+
+        WindowHandler.Instance.ToggleSpawnEnabled(true);
+        WindowHandler.Instance.ReleaseWindow();
 
         ToggleInternalColliders(false);
 

@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,14 +13,16 @@ public class WindowHandler : MonoBehaviour
 
     [SerializeField] private Material windowMaterial;
 
-    //Sets the time the window is active
     [SerializeField] private float windowLifetime = 5f;
 
     private bool _spawnEnabled = true;
 
     private Renderer _inRenderer;
     private Collider _inCollider;
-    private Coroutine _hideRoutine;
+
+    private bool _windowVisible;
+    private float _timeRemaining;
+    private int _holdCount;
 
     private void Awake()
     {
@@ -50,9 +51,33 @@ public class WindowHandler : MonoBehaviour
         SetPosition(inWindowTrans.position, inWindowTrans.forward);
     }
 
+    private void Update()
+    {
+        if (!_windowVisible || _holdCount > 0) return;
+
+        _timeRemaining -= Time.deltaTime;
+
+        if (_timeRemaining <= 0f)
+        {
+            SetWindowActive(false);
+        }
+    }
+
     public void ToggleSpawnEnabled(bool isSpawnEnabled)
     {
         _spawnEnabled = isSpawnEnabled;
+    }
+
+    // Call when something (focus, inspect) should stop the window fading
+    public void HoldWindow()
+    {
+        _holdCount++;
+    }
+
+    // Call when that thing ends
+    public void ReleaseWindow()
+    {
+        _holdCount = Mathf.Max(0, _holdCount - 1);
     }
 
     public void ProcessOpenWindowInput()
@@ -65,23 +90,19 @@ public class WindowHandler : MonoBehaviour
         SetPosition(newPosition, playerCameraTrans.forward);
 
         SetWindowActive(true);
-
-        if (_hideRoutine != null) StopCoroutine(_hideRoutine);
-        _hideRoutine = StartCoroutine(HideAfterDelay());
-    }
-
-    private IEnumerator HideAfterDelay()
-    {
-        yield return new WaitForSeconds(windowLifetime);
-
-        SetWindowActive(false);
-        _hideRoutine = null;
     }
 
     private void SetWindowActive(bool isActive)
     {
         if (_inRenderer != null) _inRenderer.enabled = isActive;
         if (_inCollider != null) _inCollider.enabled = isActive;
+
+        _windowVisible = isActive;
+
+        if (isActive)
+        {
+            _timeRemaining = windowLifetime;
+        }
     }
 
     private void SetPosition(Vector3 newPosition, Vector3 forward)
