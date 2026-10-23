@@ -12,9 +12,13 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 80eaa89a5a23dbb4a9fe948cbddef07b, type: 2}
+    - target: {fileID: 924047138915909975, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
+      propertyPath: cameraOffset.z
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2858616004377099307, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
       propertyPath: m_Name
-      value: PastLocker
+      value: LockerPast
       objectReference: {fileID: 0}
     - target: {fileID: 3694523111034162089, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

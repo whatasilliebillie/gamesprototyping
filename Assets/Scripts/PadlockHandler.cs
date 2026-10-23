@@ -3,14 +3,16 @@ using UnityEngine.Events;
 using System;
 using System.Collections;
 
-public class NumberLock : MonoBehaviour
+public class PadlockHandler : MonoBehaviour
 {
     private FocusInteractable focusInteractable;
     private Animator animator;
 
-    [SerializeField] private LockPadInteractable[] keypads;
+    [SerializeField] private PadlockHandler linkedPadlock;
 
-    [SerializeField] private int passcode;
+    [SerializeField] private DialInteractable[] dials;
+
+    [SerializeField] private string passcode;
 
     [SerializeField] private float waitForUnlock = 0.75f;
 
@@ -18,7 +20,7 @@ public class NumberLock : MonoBehaviour
 
     private void OnEnable()
     {
-        foreach(LockPadInteractable keypad in keypads)
+        foreach(DialInteractable keypad in dials)
         {
             keypad.OnInteract += OnKeyPadInteract;
         }
@@ -30,29 +32,50 @@ public class NumberLock : MonoBehaviour
         focusInteractable = GetComponent<FocusInteractable>();
     }
 
-    private void OnKeyPadInteract(int number)
+    private void OnKeyPadInteract()
     {
+        string curPass = "";
+
+        for(int i = 0; i < dials.Length; i++)
+        {
+            curPass += dials[i].CurNumber.ToString();
+        }
+
+        Debug.Log(curPass);
+
+        if (passcode == curPass)
+        {
+            Unlock();
+        }
+
+        /*
         float curPasscode = 0;
 
-        for(int i = 0; i < keypads.Length; i++)
+        for(int i = 0; i < dials.Length; i++)
         {
-            curPasscode += keypads[i].Number * Mathf.Pow(10, i + 1) / 10;
+            curPasscode += dials[i].CurNumber * Mathf.Pow(10, i + 1) / 10;
         }
 
         if(passcode == curPasscode)
         {
             Unlock();
         }
+        */
     }
 
     public void Unlock()
     {
-        foreach(LockPadInteractable keypad in keypads)
+        foreach(DialInteractable keypad in dials)
         {
             keypad.ToggleInteraction(false);
-
-            animator.SetBool("Locked", false);
         }
+
+        if(linkedPadlock != null)
+        {
+            linkedPadlock.Unlock();
+        }
+
+        animator.SetTrigger("Toggle");
 
         StartCoroutine(UnlockTriggerWait());
     }
@@ -71,7 +94,7 @@ public class NumberLock : MonoBehaviour
 
     private void OnDisable()
     {
-        foreach (LockPadInteractable keypad in keypads)
+        foreach (DialInteractable keypad in dials)
         {
             keypad.OnInteract -= OnKeyPadInteract;
         }
