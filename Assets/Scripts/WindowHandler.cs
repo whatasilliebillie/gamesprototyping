@@ -15,6 +15,9 @@ public class WindowHandler : MonoBehaviour
 
     [SerializeField] private float windowLifetime = 5f;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource windowAudioSource;
+
     private bool _spawnEnabled = true;
 
     private Renderer _inRenderer;
@@ -36,6 +39,11 @@ public class WindowHandler : MonoBehaviour
 
         _inRenderer = inWindowTrans.GetComponent<Renderer>();
         _inCollider = inWindowTrans.GetComponent<Collider>();
+
+        if (windowAudioSource == null)
+        {
+            windowAudioSource = GetComponent<AudioSource>();
+        }
     }
 
     private void Start()
@@ -68,10 +76,21 @@ public class WindowHandler : MonoBehaviour
         _spawnEnabled = isSpawnEnabled;
     }
 
-    // Pauses the fade timer (used while paused, focused or inspecting)
+    // Pauses the fade timer and the audio (used while paused, focused or inspecting)
     public void SetTimerPaused(bool paused)
     {
         _timerPaused = paused;
+
+        if (windowAudioSource == null) return;
+
+        if (paused)
+        {
+            windowAudioSource.Pause();
+        }
+        else if (_windowVisible)
+        {
+            windowAudioSource.UnPause();
+        }
     }
 
     public void ProcessOpenWindowInput()
@@ -84,6 +103,16 @@ public class WindowHandler : MonoBehaviour
         SetPosition(newPosition, playerCameraTrans.forward);
 
         SetWindowActive(true);
+
+        PlayWindowAudio();
+    }
+
+    private void PlayWindowAudio()
+    {
+        if (windowAudioSource == null) return;
+
+        windowAudioSource.Stop();
+        windowAudioSource.Play();
     }
 
     private void SetWindowActive(bool isActive)
@@ -96,6 +125,10 @@ public class WindowHandler : MonoBehaviour
         if (isActive)
         {
             _timeRemaining = windowLifetime;
+        }
+        else if (windowAudioSource != null)
+        {
+            windowAudioSource.Stop();
         }
     }
 
