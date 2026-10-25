@@ -31,6 +31,11 @@ public class BasicInteractable : MonoBehaviour, IInteractable
     {
         if (!_interactionEnabled) return;
 
+        if (interactSound != null && SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(interactSound, transform.position);
+        }
+
         InteractEvent?.Invoke();
 
         if(feedbackText != "")
