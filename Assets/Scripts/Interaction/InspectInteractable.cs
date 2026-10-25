@@ -5,6 +5,7 @@ public class InspectInteractable : MonoBehaviour, IInteractable
     [SerializeField] private Inspectable inspectPrefab;
 
     [SerializeField] private MemoryObject revealedMemory;
+    [SerializeField] private SoundSO interactSound;
     private bool hasRevealed;
 
     public Inspectable InspectPrefab => inspectPrefab;
@@ -16,6 +17,11 @@ public class InspectInteractable : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        if (interactSound != null && SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(interactSound, transform.position);
+        }
+
         PlayerUIHandler.Instance.StartInspect(this);
 
         if(!hasRevealed)

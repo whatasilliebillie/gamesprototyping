@@ -15420,6 +15420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InspectInteractable
   inspectPrefab: {fileID: 5857366975326115788, guid: 03295d3f8159c394b98a62a6ec9e87d0, type: 3}
   revealedMemory: {fileID: 0}
+  interactSound: {fileID: 11400000, guid: be4850273ca8342f8ae1e273ce486bf8, type: 2}
 --- !u!64 &354583000
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16458,6 +16459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InspectInteractable
   inspectPrefab: {fileID: 5857366975326115788, guid: 6cbcd4c6b129a584ea3a8dcc45b693e4, type: 3}
   revealedMemory: {fileID: 0}
+  interactSound: {fileID: 11400000, guid: be4850273ca8342f8ae1e273ce486bf8, type: 2}
 --- !u!65 &436283202
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22286,7 +22288,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _hoverIcon: 3
-  interactSound: {fileID: 0}
+  interactSound: {fileID: 11400000, guid: 1ed3c2d35e8364a209e2523a7b2d66cb, type: 2}
 --- !u!1 &526732210
 GameObject:
   m_ObjectHideFlags: 0
@@ -28068,6 +28070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InspectInteractable
   inspectPrefab: {fileID: 5857366975326115788, guid: 1c40deef9d379b14ab38907edfbbbfdd, type: 3}
   revealedMemory: {fileID: 0}
+  interactSound: {fileID: 11400000, guid: be4850273ca8342f8ae1e273ce486bf8, type: 2}
 --- !u!64 &708675994
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -34053,6 +34056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InspectInteractable
   inspectPrefab: {fileID: 5857366975326115788, guid: 034a7ba1786a77441a97c4a9dde30e24, type: 3}
   revealedMemory: {fileID: 0}
+  interactSound: {fileID: 11400000, guid: be4850273ca8342f8ae1e273ce486bf8, type: 2}
 --- !u!64 &939456185
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -35402,7 +35406,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _hoverIcon: 3
-  interactSound: {fileID: 0}
+  interactSound: {fileID: 11400000, guid: 1ed3c2d35e8364a209e2523a7b2d66cb, type: 2}
 --- !u!65 &1003451842
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47095,6 +47099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InspectInteractable
   inspectPrefab: {fileID: 5857366975326115788, guid: 88cdd0b92b675454293bb70987aae63c, type: 3}
   revealedMemory: {fileID: 0}
+  interactSound: {fileID: 11400000, guid: be4850273ca8342f8ae1e273ce486bf8, type: 2}
 --- !u!64 &1464572390
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -59134,6 +59139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InspectInteractable
   inspectPrefab: {fileID: 5857366975326115788, guid: 02bfffcf690813548840b9d2d64b22a4, type: 3}
   revealedMemory: {fileID: 321427915}
+  interactSound: {fileID: 11400000, guid: be4850273ca8342f8ae1e273ce486bf8, type: 2}
 --- !u!64 &1888070707
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -62145,6 +62151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InspectInteractable
   inspectPrefab: {fileID: 5857366975326115788, guid: f469493939687144e8f8c1e51460de26, type: 3}
   revealedMemory: {fileID: 0}
+  interactSound: {fileID: 11400000, guid: be4850273ca8342f8ae1e273ce486bf8, type: 2}
 --- !u!64 &1987547507
 MeshCollider:
   m_ObjectHideFlags: 0
