@@ -27771,7 +27771,7 @@ Transform:
   m_GameObject: {fileID: 700625227}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.01, z: 0}
+  m_LocalPosition: {x: 0, y: -0.01, z: -0.106}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27817,7 +27817,7 @@ Light:
   serializedVersion: 13
   m_Type: 2
   m_Color: {r: 1, g: 0.78431374, b: 0.51174796, a: 1}
-  m_Intensity: 1
+  m_Intensity: 2.5
   m_Range: 3
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -34561,7 +34561,7 @@ Light:
   serializedVersion: 13
   m_Type: 2
   m_Color: {r: 1, g: 0.45123452, b: 0.1745283, a: 1}
-  m_Intensity: 5
+  m_Intensity: 6
   m_Range: 6
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -37205,7 +37205,7 @@ Light:
   serializedVersion: 13
   m_Type: 2
   m_Color: {r: 1, g: 0.78431374, b: 0.50980395, a: 1}
-  m_Intensity: 2
+  m_Intensity: 5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -37664,7 +37664,7 @@ Light:
   serializedVersion: 13
   m_Type: 2
   m_Color: {r: 1, g: 0.78431374, b: 0.50980395, a: 1}
-  m_Intensity: 2
+  m_Intensity: 5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -38929,7 +38929,7 @@ Transform:
   m_GameObject: {fileID: 1153707540}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.124, z: 0}
+  m_LocalPosition: {x: 0, y: 0.124, z: -0.10599995}
   m_LocalScale: {x: 0.25, y: 0.15, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47115,7 +47115,7 @@ Light:
   serializedVersion: 13
   m_Type: 2
   m_Color: {r: 1, g: 0.78431374, b: 0.50980395, a: 1}
-  m_Intensity: 6
+  m_Intensity: 7
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -64281,7 +64281,7 @@ Light:
   serializedVersion: 13
   m_Type: 2
   m_Color: {r: 1, g: 0.78431374, b: 0.50980395, a: 1}
-  m_Intensity: 4
+  m_Intensity: 5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -65351,7 +65351,7 @@ MonoBehaviour:
   takeItem: 1
   defaultHoverIcon: 3
   emptyInteractFeedbackText: I'm too weak to push it down.
-  _interactionEnabled: 0
+  _interactionEnabled: 1
   ItemUseEvent:
     m_PersistentCalls:
       m_Calls:
