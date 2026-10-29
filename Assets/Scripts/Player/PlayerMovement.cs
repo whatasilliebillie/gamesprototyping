@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _moveInput;
     private bool _sprintInput;
 
+    private bool _paused;
+
     public void ProcessMoveInput(Vector2 newMoveInput)
     {
         _moveInput = newMoveInput;
@@ -22,6 +24,11 @@ public class PlayerMovement : MonoBehaviour
         _sprintInput = newSprintInput;
     }
 
+    public void SetPause(bool newPause)
+    {
+        _paused = newPause;
+    }
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -29,15 +36,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 move = cameraTrans.right * _moveInput.x + cameraTrans.forward * _moveInput.y;
+        Vector3 move = Vector3.zero;
+        
+        if(!_paused)
+        {
+            move = cameraTrans.right * _moveInput.x + cameraTrans.forward * _moveInput.y;
 
-        if(_sprintInput)
-        {
-            move *= sprintMoveSpeed;
-        }
-        else
-        {
-            move *= defaultMoveSpeed;
+            if (_sprintInput)
+            {
+                move *= sprintMoveSpeed;
+            }
+            else
+            {
+                move *= defaultMoveSpeed;
+            }
         }
 
         rb.linearVelocity = new Vector3(move.x, rb.linearVelocity.y, move.z);

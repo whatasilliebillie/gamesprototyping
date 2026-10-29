@@ -8,6 +8,7 @@ public class PlayerUIHandler : MonoBehaviour
 
     [Header("Components")]
     [SerializeField] private PlayerLook playerLook;
+    [SerializeField] private PlayerMovement playerMovement;
     private PlayerInteract playerInteract;
 
     [Header("Pause UI")]
@@ -180,6 +181,7 @@ public class PlayerUIHandler : MonoBehaviour
         Cursor.lockState = cursorEnabled ? CursorLockMode.None : CursorLockMode.Locked;
 
         playerLook.ToggleLook(!cursorEnabled);
+        playerMovement.SetPause(cursorEnabled);
     }
 
     private void ToggleCursor(bool cursorEnabled)
