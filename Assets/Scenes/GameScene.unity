@@ -1523,6 +1523,7 @@ GameObject:
   - component: {fileID: 58116820}
   - component: {fileID: 58116819}
   - component: {fileID: 58116818}
+  - component: {fileID: 58116821}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -1623,6 +1624,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 58116815}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &58116821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58116815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b80162d704e8cd48bf507a2ba58a318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasicInteractable
+  feedbackText: 
+  singleUseInteract: 0
+  InteractEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _hoverIcon: 2
+  interactSound: {fileID: 0}
 --- !u!1 &63015810
 GameObject:
   m_ObjectHideFlags: 0
@@ -8451,6 +8471,11 @@ Transform:
   - {fileID: 1069580194}
   m_Father: {fileID: 1586113518}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &215434021 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5074832593354031756, guid: a946241c1e758d34d8c1b5b97ca866d9, type: 3}
+  m_PrefabInstance: {fileID: 5577185814717470853}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &225132427
 GameObject:
   m_ObjectHideFlags: 0
@@ -9334,7 +9359,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _hoverIcon: 3
+  _hoverIcon: 2
   interactSound: {fileID: 0}
 --- !u!65 &252539431
 BoxCollider:
@@ -14640,6 +14665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InspectInteractable
   inspectPrefab: {fileID: 5857366975326115788, guid: 03295d3f8159c394b98a62a6ec9e87d0, type: 3}
   revealedMemory: {fileID: 0}
+  revealedFeedbackText: 
   interactSound: {fileID: 11400000, guid: be4850273ca8342f8ae1e273ce486bf8, type: 2}
 --- !u!64 &354583000
 MeshCollider:
@@ -15680,6 +15706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InspectInteractable
   inspectPrefab: {fileID: 5857366975326115788, guid: 6cbcd4c6b129a584ea3a8dcc45b693e4, type: 3}
   revealedMemory: {fileID: 0}
+  revealedFeedbackText: 
   interactSound: {fileID: 11400000, guid: be4850273ca8342f8ae1e273ce486bf8, type: 2}
 --- !u!65 &436283202
 BoxCollider:
@@ -19172,7 +19199,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _hoverIcon: 3
+  _hoverIcon: 2
   interactSound: {fileID: 0}
 --- !u!65 &488487668
 BoxCollider:
@@ -21408,7 +21435,7 @@ MonoBehaviour:
   InteractEvent:
     m_PersistentCalls:
       m_Calls: []
-  _hoverIcon: 3
+  _hoverIcon: 2
   interactSound: {fileID: 11400000, guid: 1ed3c2d35e8364a209e2523a7b2d66cb, type: 2}
 --- !u!1001 &531358271
 PrefabInstance:
@@ -21424,12 +21451,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2858616004377099307, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
       propertyPath: m_Name
-      value: Locker
+      value: Locker_2
       objectReference: {fileID: 0}
     - target: {fileID: 3694523111034162089, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 4a2abd4f67aefc24b9c6cca2d197adc7, type: 2}
+    - target: {fileID: 3966545330659846360, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966545330659846360, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966545330659846360, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966545330659846360, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6975671
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966545330659846360, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.074073136
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966545330659846360, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.708696
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966545330659846360, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.07525489
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966545330659846360, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 12.123
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966545330659846360, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90.907
+      objectReference: {fileID: 0}
     - target: {fileID: 4019802987475524730, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
@@ -21503,7 +21566,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 4a2abd4f67aefc24b9c6cca2d197adc7, type: 2}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3717535799851351480, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
@@ -21654,7 +21718,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  _hoverIcon: 3
+  _hoverIcon: 2
   interactSound: {fileID: 0}
 --- !u!1 &539838787
 GameObject:
@@ -24431,7 +24495,7 @@ MonoBehaviour:
   InteractEvent:
     m_PersistentCalls:
       m_Calls: []
-  _hoverIcon: 3
+  _hoverIcon: 2
   interactSound: {fileID: 0}
 --- !u!65 &653046904
 BoxCollider:
@@ -27269,6 +27333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InspectInteractable
   inspectPrefab: {fileID: 5857366975326115788, guid: 1c40deef9d379b14ab38907edfbbbfdd, type: 3}
   revealedMemory: {fileID: 0}
+  revealedFeedbackText: 
   interactSound: {fileID: 11400000, guid: be4850273ca8342f8ae1e273ce486bf8, type: 2}
 --- !u!64 &708675994
 MeshCollider:
@@ -28038,6 +28103,7 @@ GameObject:
   - component: {fileID: 729539234}
   - component: {fileID: 729539233}
   - component: {fileID: 729539232}
+  - component: {fileID: 729539235}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -28138,6 +28204,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729539230}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &729539235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729539230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b80162d704e8cd48bf507a2ba58a318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasicInteractable
+  feedbackText: It's occupied
+  singleUseInteract: 0
+  InteractEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _hoverIcon: 2
+  interactSound: {fileID: 11400000, guid: 1ed3c2d35e8364a209e2523a7b2d66cb, type: 2}
 --- !u!1 &730705535
 GameObject:
   m_ObjectHideFlags: 0
@@ -30861,7 +30946,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _hoverIcon: 3
+  _hoverIcon: 2
   interactSound: {fileID: 0}
 --- !u!65 &860410186
 BoxCollider:
@@ -32446,7 +32531,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5074832593354031756, guid: a946241c1e758d34d8c1b5b97ca866d9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1171749098}
   m_SourcePrefab: {fileID: 100100000, guid: a946241c1e758d34d8c1b5b97ca866d9, type: 3}
 --- !u!4 &909875072 stripped
 Transform:
@@ -33219,6 +33307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InspectInteractable
   inspectPrefab: {fileID: 5857366975326115788, guid: 034a7ba1786a77441a97c4a9dde30e24, type: 3}
   revealedMemory: {fileID: 0}
+  revealedFeedbackText: 
   interactSound: {fileID: 11400000, guid: be4850273ca8342f8ae1e273ce486bf8, type: 2}
 --- !u!64 &939456185
 MeshCollider:
@@ -34492,7 +34581,7 @@ MonoBehaviour:
   InteractEvent:
     m_PersistentCalls:
       m_Calls: []
-  _hoverIcon: 3
+  _hoverIcon: 2
   interactSound: {fileID: 11400000, guid: 1ed3c2d35e8364a209e2523a7b2d66cb, type: 2}
 --- !u!65 &1003451842
 BoxCollider:
@@ -38045,15 +38134,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3cd173ae4543f8745ac463237321e8db, type: 2}
     - target: {fileID: 6690508906550436017, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.51799965
+      value: 0.406
       objectReference: {fileID: 0}
     - target: {fileID: 6690508906550436017, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.999
       objectReference: {fileID: 0}
     - target: {fileID: 6690508906550436017, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.3429999
+      value: 1.331
       objectReference: {fileID: 0}
     - target: {fileID: 6690508906550436017, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
       propertyPath: m_LocalRotation.w
@@ -38061,11 +38150,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6690508906550436017, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.21574494
       objectReference: {fileID: 0}
     - target: {fileID: 6690508906550436017, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.9764498
       objectReference: {fileID: 0}
     - target: {fileID: 6690508906550436017, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
       propertyPath: m_LocalRotation.z
@@ -38081,7 +38170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6690508906550436017, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -24.918
       objectReference: {fileID: 0}
     - target: {fileID: 8628495868349013460, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -38112,15 +38201,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 4a2abd4f67aefc24b9c6cca2d197adc7, type: 2}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3717535799851351480, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7195457200778580823, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1155995585}
   m_SourcePrefab: {fileID: 100100000, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
 --- !u!4 &1155995583 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6690508906550436017, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
   m_PrefabInstance: {fileID: 1155995582}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1155995584 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7195457200778580823, guid: 79048b7ab29641743b205d3ba2bda643, type: 3}
+  m_PrefabInstance: {fileID: 1155995582}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1155995585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155995584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b80162d704e8cd48bf507a2ba58a318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasicInteractable
+  feedbackText: It's rusted shut
+  singleUseInteract: 0
+  InteractEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _hoverIcon: 2
+  interactSound: {fileID: 0}
 --- !u!43 &1159192807
 Mesh:
   m_ObjectHideFlags: 0
@@ -38455,6 +38572,32 @@ Transform:
   - {fileID: 182013816}
   m_Father: {fileID: 1598843988}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1171749095 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5074832593354031756, guid: a946241c1e758d34d8c1b5b97ca866d9, type: 3}
+  m_PrefabInstance: {fileID: 909875071}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1171749098
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171749095}
+  m_Material: {fileID: 13400000, guid: c6223c6df3689504d8a44acfb6da2b30, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.8, y: 3.6834416, z: 1.8}
+  m_Center: {x: 0.0002310574, y: -0.18061972, z: 0.00017002225}
 --- !u!1 &1184461625
 GameObject:
   m_ObjectHideFlags: 0
@@ -45648,6 +45791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InspectInteractable
   inspectPrefab: {fileID: 5857366975326115788, guid: 88cdd0b92b675454293bb70987aae63c, type: 3}
   revealedMemory: {fileID: 0}
+  revealedFeedbackText: 
   interactSound: {fileID: 11400000, guid: be4850273ca8342f8ae1e273ce486bf8, type: 2}
 --- !u!64 &1464572390
 MeshCollider:
@@ -46386,6 +46530,7 @@ GameObject:
   - component: {fileID: 1481562844}
   - component: {fileID: 1481562843}
   - component: {fileID: 1481562842}
+  - component: {fileID: 1481562845}
   m_Layer: 0
   m_Name: Box
   m_TagString: Untagged
@@ -46486,6 +46631,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1481562840}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1481562845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481562840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b80162d704e8cd48bf507a2ba58a318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasicInteractable
+  feedbackText: It's broken with age
+  singleUseInteract: 0
+  InteractEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _hoverIcon: 2
+  interactSound: {fileID: 0}
 --- !u!1 &1481896927
 GameObject:
   m_ObjectHideFlags: 0
@@ -55561,7 +55725,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _hoverIcon: 3
+  _hoverIcon: 2
   interactSound: {fileID: 0}
 --- !u!95 &1823209258
 Animator:
@@ -56325,6 +56489,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InspectInteractable
   inspectPrefab: {fileID: 5857366975326115788, guid: 02bfffcf690813548840b9d2d64b22a4, type: 3}
   revealedMemory: {fileID: 321427915}
+  revealedFeedbackText: Right... the employee handbook in the breakroom... I remember
+    now.
   interactSound: {fileID: 11400000, guid: be4850273ca8342f8ae1e273ce486bf8, type: 2}
 --- !u!64 &1888070707
 MeshCollider:
@@ -57089,7 +57255,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _hoverIcon: 3
+  _hoverIcon: 2
   interactSound: {fileID: 0}
 --- !u!65 &1918356269
 BoxCollider:
@@ -58532,7 +58698,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _hoverIcon: 3
+  _hoverIcon: 2
   interactSound: {fileID: 0}
 --- !u!65 &1934645747
 BoxCollider:
@@ -59000,7 +59166,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _hoverIcon: 3
+  _hoverIcon: 2
   interactSound: {fileID: 0}
 --- !u!65 &1956953127
 BoxCollider:
@@ -61059,7 +61225,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _hoverIcon: 3
+  _hoverIcon: 2
   interactSound: {fileID: 0}
 --- !u!65 &1965401100
 BoxCollider:
@@ -61264,6 +61430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InspectInteractable
   inspectPrefab: {fileID: 5857366975326115788, guid: f469493939687144e8f8c1e51460de26, type: 3}
   revealedMemory: {fileID: 0}
+  revealedFeedbackText: 
   interactSound: {fileID: 11400000, guid: be4850273ca8342f8ae1e273ce486bf8, type: 2}
 --- !u!64 &1987547507
 MeshCollider:
@@ -64675,7 +64842,7 @@ MonoBehaviour:
   usableItem: {fileID: 11400000, guid: 296beff55b376a144b3630d38993a080, type: 2}
   useVisualObject: {fileID: 594938066}
   takeItem: 1
-  defaultHoverIcon: 3
+  defaultHoverIcon: 2
   emptyInteractFeedbackText: I'm too weak to push it down.
   _interactionEnabled: 1
   ItemUseEvent:
@@ -68874,13 +69041,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5074832593354031756, guid: a946241c1e758d34d8c1b5b97ca866d9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5577185814717470857}
   m_SourcePrefab: {fileID: 100100000, guid: a946241c1e758d34d8c1b5b97ca866d9, type: 3}
 --- !u!4 &5577185814717470854 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5559339661807147062, guid: a946241c1e758d34d8c1b5b97ca866d9, type: 3}
   m_PrefabInstance: {fileID: 5577185814717470853}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &5577185814717470857
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215434021}
+  m_Material: {fileID: 13400000, guid: c6223c6df3689504d8a44acfb6da2b30, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.8, y: 3.6834416, z: 1.8}
+  m_Center: {x: 0.00023010373, y: -0.18061972, z: 0.00017002225}
 --- !u!1 &5604210114581941173
 GameObject:
   m_ObjectHideFlags: 0
@@ -70245,7 +70436,7 @@ MonoBehaviour:
   usableItem: {fileID: 11400000, guid: e702d7e964a5549408eaa5a73b345a0e, type: 2}
   useVisualObject: {fileID: 5604210114581941173}
   takeItem: 1
-  defaultHoverIcon: 0
+  defaultHoverIcon: 2
   emptyInteractFeedbackText: 
   _interactionEnabled: 1
   ItemUseEvent:
@@ -70746,7 +70937,7 @@ MonoBehaviour:
   InteractEvent:
     m_PersistentCalls:
       m_Calls: []
-  _hoverIcon: 3
+  _hoverIcon: 2
   interactSound: {fileID: 0}
 --- !u!1 &9125458287088222020
 GameObject:

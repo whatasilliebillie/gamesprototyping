@@ -253,7 +253,7 @@ MonoBehaviour:
   InteractEvent:
     m_PersistentCalls:
       m_Calls: []
-  _hoverIcon: 3
+  _hoverIcon: 2
   interactSound: {fileID: 0}
 --- !u!1 &2039492519169815494
 GameObject:
@@ -1181,7 +1181,7 @@ MonoBehaviour:
   InteractEvent:
     m_PersistentCalls:
       m_Calls: []
-  _hoverIcon: 3
+  _hoverIcon: 2
   interactSound: {fileID: 0}
 --- !u!1 &8271884769678835829
 GameObject:

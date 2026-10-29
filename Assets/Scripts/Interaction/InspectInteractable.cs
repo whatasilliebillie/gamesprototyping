@@ -5,6 +5,7 @@ public class InspectInteractable : MonoBehaviour, IInteractable
     [SerializeField] private Inspectable inspectPrefab;
 
     [SerializeField] private MemoryObject revealedMemory;
+    [SerializeField] private string revealedFeedbackText;
     [SerializeField] private SoundSO interactSound;
     private bool hasRevealed;
 
@@ -29,6 +30,11 @@ public class InspectInteractable : MonoBehaviour, IInteractable
             if (revealedMemory != null)
             {
                 revealedMemory.Reveal();
+
+                if (!string.IsNullOrEmpty(revealedFeedbackText) && InteractFeedbackUI.Instance != null)
+                {
+                    InteractFeedbackUI.Instance.SetFeedback(revealedFeedbackText);
+                }
 
                 hasRevealed = true;
             }
