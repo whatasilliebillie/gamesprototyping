@@ -8,6 +8,7 @@ public class InspectInteractable : MonoBehaviour, IInteractable
     [SerializeField] private string revealedFeedbackText;
     [SerializeField] private SoundSO interactSound;
     private bool hasRevealed;
+    private bool _feedbackPending;
 
     public Inspectable InspectPrefab => inspectPrefab;
 
@@ -25,19 +26,31 @@ public class InspectInteractable : MonoBehaviour, IInteractable
 
         PlayerUIHandler.Instance.StartInspect(this);
 
+        // Allows inspecting this object to reveal a memory
         if(!hasRevealed)
         {
             if (revealedMemory != null)
             {
                 revealedMemory.Reveal();
 
-                if (!string.IsNullOrEmpty(revealedFeedbackText) && InteractFeedbackUI.Instance != null)
-                {
-                    InteractFeedbackUI.Instance.SetFeedback(revealedFeedbackText);
-                }
+                //Queues the Feedback text to be revealed when OnInspectClosed() is called
+                _feedbackPending = true;
 
                 hasRevealed = true;
             }
+        }
+    }
+
+    // Called by PlayerUIHandler when inspecting this object ends
+    public void OnInspectClosed()
+    {
+        if (!_feedbackPending) return;
+
+        _feedbackPending = false;
+
+        if (!string.IsNullOrEmpty(revealedFeedbackText) && InteractFeedbackUI.Instance != null)
+        {
+            InteractFeedbackUI.Instance.SetFeedback(revealedFeedbackText);
         }
     }
 }

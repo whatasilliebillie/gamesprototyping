@@ -56489,8 +56489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InspectInteractable
   inspectPrefab: {fileID: 5857366975326115788, guid: 02bfffcf690813548840b9d2d64b22a4, type: 3}
   revealedMemory: {fileID: 321427915}
-  revealedFeedbackText: Right... the employee handbook in the breakroom... I remember
-    now.
+  revealedFeedbackText: Employee handbook... I remember that now.
   interactSound: {fileID: 11400000, guid: be4850273ca8342f8ae1e273ce486bf8, type: 2}
 --- !u!64 &1888070707
 MeshCollider:

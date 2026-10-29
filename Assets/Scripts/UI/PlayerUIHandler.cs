@@ -27,6 +27,7 @@ public class PlayerUIHandler : MonoBehaviour
 
     private Inspectable _inspectingUIObject;
     private bool _isInspecting;
+    private InspectInteractable _inspectingInteractable;
 
     private FocusInteractable _focusingObject;
     private bool _isFocused;
@@ -94,6 +95,7 @@ public class PlayerUIHandler : MonoBehaviour
 
         Inspectable newInspectObject = Instantiate(inspectInteractable.InspectPrefab, inspectUIParent);
         _inspectingUIObject = newInspectObject;
+        _inspectingInteractable = inspectInteractable;
 
         ToggleCursor(true);
 
@@ -121,6 +123,14 @@ public class PlayerUIHandler : MonoBehaviour
         _isInspecting = false;
 
         UpdateWindowEnabled();
+
+        if (_inspectingInteractable != null)
+        {
+            InspectInteractable closedInteractable = _inspectingInteractable;
+            _inspectingInteractable = null;
+
+            closedInteractable.OnInspectClosed();
+        }
     }
 
     public void StartFocus(FocusInteractable focusInteractable)
