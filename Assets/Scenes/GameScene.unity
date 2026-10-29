@@ -996,6 +996,7 @@ Transform:
   - {fileID: 5577185814717470854}
   - {fileID: 909875072}
   - {fileID: 1027878637}
+  - {fileID: 1027007428}
   m_Father: {fileID: 517516072}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &53848808
@@ -7084,6 +7085,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 715332788}
     m_Modifications:
+    - target: {fileID: 7987899600167060088, guid: 9921911a745ada144a9cbb60a0af4b06, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3cd173ae4543f8745ac463237321e8db, type: 2}
     - target: {fileID: 8492175009301586861, guid: 9921911a745ada144a9cbb60a0af4b06, type: 3}
       propertyPath: m_Name
       value: Bin
@@ -15091,6 +15096,8 @@ Transform:
   - {fileID: 5573737457774493476}
   - {fileID: 2101459056}
   - {fileID: 1793961473046932027}
+  - {fileID: 858888626}
+  - {fileID: 907199814}
   m_Father: {fileID: 517516072}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &389264450
@@ -30680,6 +30687,67 @@ Transform:
   - {fileID: 818586524}
   m_Father: {fileID: 2507454}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &858888625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 858888626}
+  - component: {fileID: 858888627}
+  m_Layer: 0
+  m_Name: Graffiti_5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &858888626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858888625}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.023875946, y: -0.7067036, z: -0.023875946, w: 0.7067036}
+  m_LocalPosition: {x: -0.112, y: 1.122, z: -10.159}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 380659837}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: -3.87}
+--- !u!114 &858888627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858888625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.DecalProjector
+  m_Material: {fileID: 2100000, guid: 9bb03b51a168085478ea85bde2e805ea, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 1, y: 1}
+  m_UVBias: {x: 0, y: 0}
+  m_RenderingLayerMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ScaleMode: 0
+  m_Offset: {x: 0, y: 0, z: 0.5}
+  m_Size: {x: 4, y: 2, z: 1}
+  m_FadeFactor: 0.8
+  m_VisibleInScene: 1
+  version: 1
+  m_DecalLayerMask: 1
 --- !u!1 &860410183
 GameObject:
   m_ObjectHideFlags: 0
@@ -31983,6 +32051,67 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &907199813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 907199814}
+  - component: {fileID: 907199815}
+  m_Layer: 0
+  m_Name: Graffiti_6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &907199814
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907199813}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.022251183, y: 0.9997524, z: -0, w: 0}
+  m_LocalPosition: {x: -0.302, y: 0.584, z: -16.224}
+  m_LocalScale: {x: 0.8585799, y: 0.85858023, z: 0.85858}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 380659837}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: -2.55}
+--- !u!114 &907199815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907199813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.DecalProjector
+  m_Material: {fileID: 2100000, guid: 1df41003ce37d7a45967844b8466c23c, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 1, y: 1}
+  m_UVBias: {x: 0, y: 0}
+  m_RenderingLayerMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ScaleMode: 0
+  m_Offset: {x: 0, y: 0, z: 0.5}
+  m_Size: {x: 8, y: 2, z: 1}
+  m_FadeFactor: 0.7
+  m_VisibleInScene: 1
+  version: 1
+  m_DecalLayerMask: 1
 --- !u!1 &908669665
 GameObject:
   m_ObjectHideFlags: 0
@@ -33837,6 +33966,67 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 971452188}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &975118090
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 975118091}
+  - component: {fileID: 975118092}
+  m_Layer: 0
+  m_Name: Graffiti_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &975118091
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975118090}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.05132946, y: 0.9986818, z: -0, w: 0}
+  m_LocalPosition: {x: -0.145, y: 1.487, z: -0.855}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1936615718}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 5.885}
+--- !u!114 &975118092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975118090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.DecalProjector
+  m_Material: {fileID: 2100000, guid: 340150dc127dac74fa6fed40aa9cf930, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 1, y: 1}
+  m_UVBias: {x: 0, y: 0}
+  m_RenderingLayerMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ScaleMode: 0
+  m_Offset: {x: 0, y: 0, z: 0.5}
+  m_Size: {x: 4, y: 2, z: 1}
+  m_FadeFactor: 0.7
+  m_VisibleInScene: 1
+  version: 1
+  m_DecalLayerMask: 1
 --- !u!1 &991245532
 GameObject:
   m_ObjectHideFlags: 0
@@ -34986,6 +35176,67 @@ Transform:
   - {fileID: 1199328343}
   m_Father: {fileID: 1654309194}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1027007427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1027007428}
+  - component: {fileID: 1027007429}
+  m_Layer: 0
+  m_Name: Graffiti_4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1027007428
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027007427}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.04058803, y: 0.70594096, z: 0.04058802, w: 0.70594096}
+  m_LocalPosition: {x: 2.4070005, y: 1.146, z: 1.9089999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 52234717}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 6.581}
+--- !u!114 &1027007429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027007427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.DecalProjector
+  m_Material: {fileID: 2100000, guid: abe1332ba5eec814cb8ab00e12cbcf59, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 1, y: 1}
+  m_UVBias: {x: 0, y: 0}
+  m_RenderingLayerMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ScaleMode: 0
+  m_Offset: {x: 0, y: 0, z: 0.5}
+  m_Size: {x: 4, y: 2, z: 1}
+  m_FadeFactor: 0.8
+  m_VisibleInScene: 1
+  version: 1
+  m_DecalLayerMask: 1
 --- !u!1001 &1027878636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40469,6 +40720,67 @@ Transform:
   - {fileID: 884397847}
   m_Father: {fileID: 2028406322}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1297219347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1297219349}
+  - component: {fileID: 1297219348}
+  m_Layer: 0
+  m_Name: Graffiti_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1297219348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297219347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.DecalProjector
+  m_Material: {fileID: 2100000, guid: 1df41003ce37d7a45967844b8466c23c, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 1, y: 1}
+  m_UVBias: {x: 0, y: 0}
+  m_RenderingLayerMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ScaleMode: 0
+  m_Offset: {x: 0, y: 0, z: 0.5}
+  m_Size: {x: 4, y: 2, z: 1}
+  m_FadeFactor: 0.7
+  m_VisibleInScene: 1
+  version: 1
+  m_DecalLayerMask: 1
+--- !u!4 &1297219349
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297219347}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.03161118, y: -0.70639986, z: -0.031611174, w: 0.70639986}
+  m_LocalPosition: {x: -10.448, y: 1.707, z: -0.72}
+  m_LocalScale: {x: 0.85857993, y: 0.8585801, z: 0.85858}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2053857373}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: -5.125}
 --- !u!1001 &1300054669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40695,7 +41007,7 @@ PrefabInstance:
       objectReference: {fileID: 1478864611}
     - target: {fileID: 1068031099560698811, guid: 19e63e9fc5d62cc408c9c0ff7a7a3875, type: 3}
       propertyPath: m_VersionIndex
-      value: 6206
+      value: 6212
       objectReference: {fileID: 0}
     - target: {fileID: 1473743318517499519, guid: 19e63e9fc5d62cc408c9c0ff7a7a3875, type: 3}
       propertyPath: m_Name
@@ -41216,7 +41528,7 @@ PrefabInstance:
       objectReference: {fileID: 566719398}
     - target: {fileID: 3659356186476005041, guid: ac64ea82df5efc64a83512bc99aa1855, type: 3}
       propertyPath: m_VersionIndex
-      value: 27920
+      value: 27923
       objectReference: {fileID: 0}
     - target: {fileID: 4043448632551469414, guid: ac64ea82df5efc64a83512bc99aa1855, type: 3}
       propertyPath: m_Mesh
@@ -58302,6 +58614,7 @@ Transform:
   - {fileID: 4934303645273234788}
   - {fileID: 696069203}
   - {fileID: 1219604001}
+  - {fileID: 975118091}
   m_Father: {fileID: 517516072}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1941194828
@@ -61199,6 +61512,67 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7807989, y: 1.4969862, z: 0.76727146}
   m_Center: {x: -0.23375723, y: -0.22071974, z: 0.118694514}
+--- !u!1 &1999117410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1999117412}
+  - component: {fileID: 1999117411}
+  m_Layer: 0
+  m_Name: Graffiti_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1999117411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999117410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.DecalProjector
+  m_Material: {fileID: 2100000, guid: db7e9bf46097a7542b02094b83673d5c, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 1, y: 1}
+  m_UVBias: {x: 0, y: 0}
+  m_RenderingLayerMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ScaleMode: 0
+  m_Offset: {x: 0, y: 0, z: 0.5}
+  m_Size: {x: 3, y: 3, z: 1}
+  m_FadeFactor: 0.7
+  m_VisibleInScene: 1
+  version: 1
+  m_DecalLayerMask: 1
+--- !u!4 &1999117412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999117410}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.02852987, y: 0.70653105, z: 0.028529864, w: 0.70653105}
+  m_LocalPosition: {x: -6.739, y: 1.455, z: -0.797}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2053857373}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 4.625}
 --- !u!1 &2003845101
 GameObject:
   m_ObjectHideFlags: 0
@@ -63903,6 +64277,8 @@ Transform:
   - {fileID: 1049255914}
   - {fileID: 360570855}
   - {fileID: 7034945908958374545}
+  - {fileID: 1297219349}
+  - {fileID: 1999117412}
   m_Father: {fileID: 517516072}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2060517169
@@ -67443,7 +67819,7 @@ PrefabInstance:
       objectReference: {fileID: 884464791}
     - target: {fileID: 1068031099560698811, guid: 19e63e9fc5d62cc408c9c0ff7a7a3875, type: 3}
       propertyPath: m_VersionIndex
-      value: 6017
+      value: 6044
       objectReference: {fileID: 0}
     - target: {fileID: 1473743318517499519, guid: 19e63e9fc5d62cc408c9c0ff7a7a3875, type: 3}
       propertyPath: m_Name
@@ -68708,7 +69084,7 @@ PrefabInstance:
       objectReference: {fileID: 719229300}
     - target: {fileID: 3659356186476005041, guid: ac64ea82df5efc64a83512bc99aa1855, type: 3}
       propertyPath: m_VersionIndex
-      value: 27685
+      value: 27772
       objectReference: {fileID: 0}
     - target: {fileID: 3659356186476005041, guid: ac64ea82df5efc64a83512bc99aa1855, type: 3}
       propertyPath: m_SelectedEdges.Array.size
