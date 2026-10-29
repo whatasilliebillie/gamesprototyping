@@ -18,6 +18,9 @@ public class WindowHandler : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioSource windowAudioSource;
 
+    [Header("VFX")]
+    [SerializeField] private ParticleSystem windowVFX;
+
     private bool _spawnEnabled = true;
 
     private Renderer _inRenderer;
@@ -76,20 +79,20 @@ public class WindowHandler : MonoBehaviour
         _spawnEnabled = isSpawnEnabled;
     }
 
-    // Pauses the fade timer and the audio (used while paused, focused or inspecting)
+    // Pauses the fade timer, audio and VFX (used while paused, focused or inspecting)
     public void SetTimerPaused(bool paused)
     {
         _timerPaused = paused;
 
-        if (windowAudioSource == null) return;
-
         if (paused)
         {
-            windowAudioSource.Pause();
+            if (windowAudioSource != null) windowAudioSource.Pause();
+            if (windowVFX != null) windowVFX.Pause();
         }
         else if (_windowVisible)
         {
-            windowAudioSource.UnPause();
+            if (windowAudioSource != null) windowAudioSource.UnPause();
+            if (windowVFX != null) windowVFX.Play();
         }
     }
 
@@ -125,10 +128,17 @@ public class WindowHandler : MonoBehaviour
         if (isActive)
         {
             _timeRemaining = windowLifetime;
+
+            if (windowVFX != null)
+            {
+                windowVFX.Clear();
+                windowVFX.Play();
+            }
         }
-        else if (windowAudioSource != null)
+        else
         {
-            windowAudioSource.Stop();
+            if (windowAudioSource != null) windowAudioSource.Stop();
+            if (windowVFX != null) windowVFX.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         }
     }
 
