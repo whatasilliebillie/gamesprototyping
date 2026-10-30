@@ -9,6 +9,7 @@ public class SoundSO : ScriptableObject
     [Range(0f, 1f)] public float Volume = 1f;
     [Range(-3, 3f)] public float pitch = 1f;
     [Range(0f, 1f)] public float SpatialBlend = 1f;
+    public float MinDistance = 2f;
     public float MaxDistance = 25f;
     public bool IsLooping;
 
