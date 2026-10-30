@@ -34496,7 +34496,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  _hoverIcon: 3
+  _hoverIcon: 2
   interactSound: {fileID: 0}
 --- !u!65 &991245535
 BoxCollider:
@@ -69057,6 +69057,12 @@ MonoBehaviour:
   glowLight: {fileID: 1807362762}
   maxIntensity: 1.5
   fadeSpeed: 4
+  firstPhaseText: 
+  phaseLoopClip: {fileID: 0}
+  phaseExitClip: {fileID: 0}
+  loopVolume: 0.6
+  exitVolume: 1
+  loopFadeSpeed: 3
 --- !u!1001 &1911965215
 PrefabInstance:
   m_ObjectHideFlags: 0
