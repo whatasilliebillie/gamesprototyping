@@ -26365,10 +26365,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -8.758, y: 1, z: -5.4}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1080070850}
+  - {fileID: 1929406399}
   m_Father: {fileID: 517516072}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!64 &689643605
@@ -28403,7 +28404,7 @@ MonoBehaviour:
   windowMaterial: {fileID: 2100000, guid: 2310f7592fdd4774b81aebd7840b90b6, type: 2}
   windowLifetime: 5
   windowAudioSource: {fileID: 689643608}
-  windowVFX: {fileID: 1080070852}
+  windowLightning: {fileID: 1929406400}
 --- !u!4 &748491333
 Transform:
   m_ObjectHideFlags: 0
@@ -36624,7 +36625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1080070850
 Transform:
   m_ObjectHideFlags: 0
@@ -36666,8 +36667,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 33933188840ef1e40ba6cc5e2321c66e, type: 2}
+  - {fileID: 2100000, guid: 33933188840ef1e40ba6cc5e2321c66e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -36690,7 +36691,7 @@ ParticleSystemRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_RenderMode: 0
+  m_RenderMode: 5
   m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -36975,7 +36976,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -63472,6 +63473,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1929322277}
   m_CullTransparentMesh: 1
+--- !u!1 &1929406398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1929406399}
+  - component: {fileID: 1929406400}
+  m_Layer: 7
+  m_Name: WindowLightning
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1929406399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929406398}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 689643604}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1929406400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929406398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddeff777101dee245984824d1165a9f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WindowLightning
+  panel: {fileID: 0}
+  boltMaterial: {fileID: 2100000, guid: 33933188840ef1e40ba6cc5e2321c66e, type: 2}
+  panelSize: {x: 0.99, y: 0.99}
+  forwardOffset: -0.03
+  boltCount: 12
+  pointsPerBolt: 12
+  boltWidth: 0.01
+  jitter: 0.03
+  boltColor: {r: 0.6, g: 0.85, b: 1, a: 1}
+  refreshInterval: 0.13
 --- !u!1 &1934645744
 GameObject:
   m_ObjectHideFlags: 0
@@ -72824,7 +72879,7 @@ PrefabInstance:
       objectReference: {fileID: 884464791}
     - target: {fileID: 1068031099560698811, guid: 19e63e9fc5d62cc408c9c0ff7a7a3875, type: 3}
       propertyPath: m_VersionIndex
-      value: 6044
+      value: 6062
       objectReference: {fileID: 0}
     - target: {fileID: 1473743318517499519, guid: 19e63e9fc5d62cc408c9c0ff7a7a3875, type: 3}
       propertyPath: m_Name
@@ -74113,7 +74168,7 @@ PrefabInstance:
       objectReference: {fileID: 719229300}
     - target: {fileID: 3659356186476005041, guid: ac64ea82df5efc64a83512bc99aa1855, type: 3}
       propertyPath: m_VersionIndex
-      value: 27772
+      value: 27787
       objectReference: {fileID: 0}
     - target: {fileID: 3659356186476005041, guid: ac64ea82df5efc64a83512bc99aa1855, type: 3}
       propertyPath: m_SelectedEdges.Array.size

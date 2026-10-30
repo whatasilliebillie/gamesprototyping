@@ -19,7 +19,7 @@ public class WindowHandler : MonoBehaviour
     [SerializeField] private AudioSource windowAudioSource;
 
     [Header("VFX")]
-    [SerializeField] private ParticleSystem windowVFX;
+    [SerializeField] private WindowLightning windowLightning;
 
     private bool _spawnEnabled = true;
 
@@ -60,6 +60,7 @@ public class WindowHandler : MonoBehaviour
         windowMaterial.mainTexture = windowCamera.targetTexture;
 
         SetPosition(inWindowTrans.position, inWindowTrans.forward);
+
     }
 
     private void Update()
@@ -87,12 +88,12 @@ public class WindowHandler : MonoBehaviour
         if (paused)
         {
             if (windowAudioSource != null) windowAudioSource.Pause();
-            if (windowVFX != null) windowVFX.Pause();
+            if (windowLightning != null) windowLightning.Pause();
         }
         else if (_windowVisible)
         {
             if (windowAudioSource != null) windowAudioSource.UnPause();
-            if (windowVFX != null) windowVFX.Play();
+            if (windowLightning != null) windowLightning.Resume();
         }
     }
 
@@ -129,16 +130,12 @@ public class WindowHandler : MonoBehaviour
         {
             _timeRemaining = windowLifetime;
 
-            if (windowVFX != null)
-            {
-                windowVFX.Clear();
-                windowVFX.Play();
-            }
+            if (windowLightning != null) windowLightning.Play();
         }
         else
         {
             if (windowAudioSource != null) windowAudioSource.Stop();
-            if (windowVFX != null) windowVFX.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            if (windowLightning != null) windowLightning.Stop();
         }
     }
 
