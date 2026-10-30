@@ -28405,6 +28405,8 @@ MonoBehaviour:
   windowLifetime: 5
   windowAudioSource: {fileID: 689643608}
   windowLightning: {fileID: 1929406400}
+  lightningUnlockDistance: 2
+  unlockByDistance: 0
 --- !u!4 &748491333
 Transform:
   m_ObjectHideFlags: 0
@@ -31719,6 +31721,73 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &885174962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 885174963}
+  - component: {fileID: 885174965}
+  - component: {fileID: 885174964}
+  m_Layer: 0
+  m_Name: Window VFX Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &885174963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885174962}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.431, y: 0.199, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1936615718}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &885174964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885174962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0113013e25c00d0498858df60d420147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WindowLightningTrigger
+  singleUse: 1
+--- !u!65 &885174965
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885174962}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3435545, y: 1.2851074, z: 2.9135156}
+  m_Center: {x: -0.26734114, y: 0.14255369, z: -0.020129442}
 --- !u!1 &887073950
 GameObject:
   m_ObjectHideFlags: 0
@@ -63674,6 +63743,7 @@ Transform:
   - {fileID: 696069203}
   - {fileID: 1219604001}
   - {fileID: 975118091}
+  - {fileID: 885174963}
   m_Father: {fileID: 517516072}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1941194828
