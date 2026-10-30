@@ -13,10 +13,16 @@ public class WindowHandler : MonoBehaviour
 
     [SerializeField] private Material windowMaterial;
 
+    [Header("Duaration")]
     [SerializeField] private float windowLifetime = 5f;
 
     [Header("Audio")]
     [SerializeField] private AudioSource windowAudioSource;
+
+    [Header("VFX")]
+    [SerializeField] private WindowLightning windowLightning;
+    [SerializeField] private float lightningUnlockDistance = 3f;
+    [SerializeField] private bool unlockByDistance = true;
 
     private bool _spawnEnabled = true;
 
@@ -26,6 +32,8 @@ public class WindowHandler : MonoBehaviour
     private bool _windowVisible;
     private bool _timerPaused;
     private float _timeRemaining;
+
+    private bool _lightningUnlocked;
 
     private void Awake()
     {
@@ -61,6 +69,8 @@ public class WindowHandler : MonoBehaviour
 
     private void Update()
     {
+        CheckLightningUnlock();
+
         if (!_windowVisible || _timerPaused) return;
 
         _timeRemaining -= Time.deltaTime;
@@ -71,25 +81,49 @@ public class WindowHandler : MonoBehaviour
         }
     }
 
+    // Turns the VFX off until the player reaches a certain distance from it, so that it doesn't appear on startup
+    private void CheckLightningUnlock()
+    {
+        if (!unlockByDistance || _lightningUnlocked || _timerPaused) return;
+
+        float distance = Vector3.Distance(playerCameraTrans.position, inWindowTrans.position);
+
+        if (distance <= lightningUnlockDistance)
+        {
+            UnlockLightning();
+        }
+    }
+
+    // Public so a trigger zone or other script can also call it
+    public void UnlockLightning()
+    {
+        if (_lightningUnlocked) return;
+
+        _lightningUnlocked = true;
+
+        if (windowLightning != null) windowLightning.Play();
+    }
+
     public void ToggleSpawnEnabled(bool isSpawnEnabled)
     {
         _spawnEnabled = isSpawnEnabled;
     }
 
-    // Pauses the fade timer and the audio (used while paused, focused or inspecting)
+    // Pauses the fade timer, audio and VFX (used while paused, focused or inspecting)
     public void SetTimerPaused(bool paused)
     {
         _timerPaused = paused;
 
-        if (windowAudioSource == null) return;
-
         if (paused)
         {
-            windowAudioSource.Pause();
+            if (windowAudioSource != null) windowAudioSource.Pause();
+            if (windowLightning != null) windowLightning.Pause();
         }
-        else if (_windowVisible)
+        else
         {
-            windowAudioSource.UnPause();
+            if (windowLightning != null) windowLightning.Resume();
+
+            if (_windowVisible && windowAudioSource != null) windowAudioSource.UnPause();
         }
     }
 
@@ -101,6 +135,9 @@ public class WindowHandler : MonoBehaviour
         newPosition += playerCameraTrans.forward.normalized * 0.05f;
 
         SetPosition(newPosition, playerCameraTrans.forward);
+
+        //This makes the lightning appear even if the player summons it before passing through it
+        _lightningUnlocked = true;
 
         SetWindowActive(true);
 
@@ -125,10 +162,13 @@ public class WindowHandler : MonoBehaviour
         if (isActive)
         {
             _timeRemaining = windowLifetime;
+
+            if (windowLightning != null) windowLightning.Play();
         }
-        else if (windowAudioSource != null)
+        else
         {
-            windowAudioSource.Stop();
+            if (windowAudioSource != null) windowAudioSource.Stop();
+            if (windowLightning != null) windowLightning.Stop();
         }
     }
 
