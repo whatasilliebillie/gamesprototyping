@@ -57,14 +57,11 @@ public class SoundManager : MonoBehaviour
         return true;
     }
 
-    public void PlaySound(SoundSO soundSO, Vector3 position)
+    public AudioSource PlaySound(SoundSO soundSO, Vector3 position)
     {
-        if (soundSO == null || soundSO.Clip == null)
-        {
-            return;
-        }
+        if (soundSO == null || soundSO.Clip == null) return null;
 
-        if (!CanPlay(soundSO)) return;
+        if (!CanPlay(soundSO)) return null;
 
         var go = new GameObject(soundSO.name);
         go.transform.position = position;
@@ -76,25 +73,26 @@ public class SoundManager : MonoBehaviour
         source.volume = soundSO.Volume;
         source.pitch = soundSO.pitch;
         source.spatialBlend = soundSO.SpatialBlend;
+        source.minDistance = soundSO.MinDistance;
         source.maxDistance = soundSO.MaxDistance;
+        source.rolloffMode = AudioRolloffMode.Linear;
         source.loop = soundSO.IsLooping;
 
         source.Play();
 
         if (!soundSO.IsLooping)
         {
-            Destroy(go, clip.length / Mathf.Abs(source.pitch));
+            Destroy(go, clip.length / Mathf.Abs(source.pitch) + 0.2f);
         }
+
+        return source;
     }
 
-    public void PlayRandomSound(SoundMultipleSO soundSO, Vector3 position)
+    public AudioSource PlayRandomSound(SoundMultipleSO soundSO, Vector3 position)
     {
-        if (soundSO == null || soundSO.RandomClips == null || soundSO.RandomClips.Length == 0)
-        {
-            return;
-        }
+        if (soundSO == null || soundSO.RandomClips == null || soundSO.RandomClips.Length == 0) return null;
 
-        if (!CanPlay(soundSO)) return;
+        if (!CanPlay(soundSO)) return null;
 
         var go = new GameObject(soundSO.name);
         go.transform.position = position;
@@ -106,7 +104,9 @@ public class SoundManager : MonoBehaviour
         source.volume = soundSO.Volume;
         source.pitch = soundSO.pitch;
         source.spatialBlend = soundSO.SpatialBlend;
+        source.minDistance = soundSO.MinDistance;
         source.maxDistance = soundSO.MaxDistance;
+        source.rolloffMode = AudioRolloffMode.Linear;
         source.loop = soundSO.IsLooping;
 
         source.Play();
@@ -115,6 +115,27 @@ public class SoundManager : MonoBehaviour
         {
             Destroy(go, clip.length / Mathf.Abs(source.pitch));
         }
+
+        return source;
+    }
+
+    public AudioSource CreateSource(SoundSO soundSO, Vector3 position)
+    {
+        if (soundSO == null || soundSO.Clip == null) return null;
+
+        var go = new GameObject(soundSO.name);
+        go.transform.position = position;
+        var source = go.AddComponent<AudioSource>();
+
+        source.clip = soundSO.Clip;
+        source.outputAudioMixerGroup = soundSO.MixerGroup;
+        source.volume = soundSO.Volume;
+        source.pitch = soundSO.pitch;
+        source.spatialBlend = soundSO.SpatialBlend;
+        source.maxDistance = soundSO.MaxDistance;
+        source.rolloffMode = AudioRolloffMode.Linear;
+        source.loop = soundSO.IsLooping;
+        return source;
     }
 
 

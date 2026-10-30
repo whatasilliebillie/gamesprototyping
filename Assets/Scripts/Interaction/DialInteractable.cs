@@ -4,6 +4,7 @@ using TMPro;
 
 public class DialInteractable : MonoBehaviour, IInteractable
 {
+    [SerializeField] private SoundSO dialSound;
     private Animator animator;
 
     public int CurNumber => _curNumber;
@@ -29,6 +30,11 @@ public class DialInteractable : MonoBehaviour, IInteractable
     public void Interact()
     {
         if (!_interactionEnabled) return;
+
+        if (dialSound != null && SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(dialSound, transform.position);
+        }
 
         _curNumber++;
 

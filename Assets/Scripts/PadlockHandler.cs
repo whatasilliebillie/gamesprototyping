@@ -16,6 +16,7 @@ public class PadlockHandler : MonoBehaviour
 
     [SerializeField] private float waitForUnlock = 0.75f;
 
+    [SerializeField] private SoundSO unlockSound;
     public UnityEvent UnlockEvent;
 
     private void OnEnable()
@@ -73,6 +74,11 @@ public class PadlockHandler : MonoBehaviour
         if(linkedPadlock != null)
         {
             linkedPadlock.Unlock();
+        }
+
+        if (unlockSound != null && SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(unlockSound, transform.position);
         }
 
         animator.SetTrigger("Toggle");
