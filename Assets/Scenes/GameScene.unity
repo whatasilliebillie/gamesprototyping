@@ -70010,7 +70010,7 @@ MonoBehaviour:
   takeItem: 1
   defaultHoverIcon: 2
   emptyInteractFeedbackText: I'm too weak to push it down.
-  _interactionEnabled: 1
+  _interactionEnabled: 0
   ItemUseEvent:
     m_PersistentCalls:
       m_Calls:
