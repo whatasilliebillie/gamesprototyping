@@ -2124,6 +2124,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -250
       objectReference: {fileID: 0}
+    - target: {fileID: 2691379313780924851, guid: e140fd8cba4195948be2726a68ad8ce0, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMusicVolume
+      objectReference: {fileID: 0}
     - target: {fileID: 2836641509110943187, guid: e140fd8cba4195948be2726a68ad8ce0, type: 3}
       propertyPath: m_IsActive
       value: 0
