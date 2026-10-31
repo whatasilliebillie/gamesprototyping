@@ -28590,7 +28590,6 @@ GameObject:
   - component: {fileID: 748491333}
   - component: {fileID: 748491332}
   - component: {fileID: 748491335}
-  - component: {fileID: 748491336}
   m_Layer: 0
   m_Name: IMPORTANT
   m_TagString: Untagged
@@ -28648,19 +28647,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FPSTarget
   target: 500
---- !u!114 &748491336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748491331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 893c2ebb1aa29974bab4d36fb983adeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SoundManager
-  mixer: {fileID: 24100000, guid: 8aa981a01df7edb4e927f592561181c6, type: 2}
 --- !u!1 &752124134
 GameObject:
   m_ObjectHideFlags: 0
