@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180e488ae3937044d884ba6d6b2486f7, type: 3}
   m_Name: SD_WaterDrip
   m_EditorClassIdentifier: Assembly-CSharp::SoundSO
-  Clip: {fileID: 8300000, guid: 1f7eb807069314bdba1fa013057cbc6d, type: 3}
+  Clip: {fileID: 8300000, guid: dff1ceb985ed54b77be098e26e71ef39, type: 3}
   MixerGroup: {fileID: 4507937391878009864, guid: 8aa981a01df7edb4e927f592561181c6, type: 2}
   Volume: 1
   pitch: 1
