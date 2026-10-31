@@ -82008,7 +82008,7 @@ MonoBehaviour:
   sound: {fileID: 11400000, guid: 9566a3c06d9dc4b6d81ae2b8f9f83dd6, type: 2}
   playOnStart: 1
   followThisObject: 0
-  delay: 0.5
+  delay: 0.6
 --- !u!1 &7316454152605721566
 GameObject:
   m_ObjectHideFlags: 0
